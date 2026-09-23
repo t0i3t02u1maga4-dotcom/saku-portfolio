@@ -1,0 +1,1202 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Saku | SNS Operation Support</title>
+<style>
+:root{--teal:#426d78;--teal2:#315e68;--pink:#bf8da8;--pale:#f8e9ef;--ink:#173b49;--line:#ead8df;}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);font-family:"Yu Mincho","Hiragino Mincho ProN",Georgia,serif;background:#fff}
+a{color:inherit;text-decoration:none}.wrap{max-width:1240px;margin:auto;padding:0 42px}
+header{height:76px;background:#fff;display:flex;align-items:center;position:sticky;top:0;z-index:20;border-bottom:1px solid #f2e8ec}
+nav{width:100%;display:flex;align-items:center;gap:36px}.logo{font:700 36px Georgia;color:#183d4c;margin-right:auto}.logo span{color:var(--pink)}
+nav a{font:600 14px Georgia}.contact-btn{background:var(--pink);color:#fff;padding:13px 24px;border-radius:28px}
+.hero{display:grid;grid-template-columns:49% 51%;min-height:520px}
+.hero-copy{background:var(--teal);color:#fff;padding:62px max(55px,calc((100vw - 1240px)/2 + 42px));padding-right:55px;position:relative;overflow:hidden}
+.hero-copy:after{content:"";position:absolute;width:220px;height:220px;border:1px solid rgba(255,255,255,.22);border-radius:50%;left:-110px;bottom:-110px}
+.eyebrow{letter-spacing:.28em;font:13px Georgia;margin-bottom:20px}h1{font-size:52px;line-height:1.38;margin:0 0 22px;font-weight:500;letter-spacing:.05em}
+.hero-copy p{font-size:16px;line-height:2;margin:0 0 28px}.btns{display:flex;gap:14px}.btn{padding:13px 27px;border-radius:30px;border:1px solid #fff}.btn.primary{background:var(--pink);border-color:var(--pink)}
+.hero-art{position:relative;overflow:hidden;background:#f6e7ed}
+.hero-art img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
+.hero-art:after{content:"SNS運用\Aデザイン制作\A業務サポート";white-space:pre;position:absolute;right:7%;bottom:12%;width:150px;height:150px;border-radius:50%;background:rgba(250,231,238,.94);display:grid;place-items:center;text-align:center;line-height:1.7;color:#a86280}
+.section{padding:68px 0}.section-title{font:700 38px Georgia;margin:0 0 30px}.sub{font-size:13px;color:#9f6b80;margin-left:10px}
+.about{background:linear-gradient(110deg,#fff 0 68%,var(--pale) 68%)}
+.about-grid{display:grid;grid-template-columns:280px 1fr 300px;gap:42px;align-items:center}
+.profile-frame{height:300px;border-radius:140px 140px 0 0;overflow:hidden;background:var(--pale);border-left:10px solid var(--pink)}
+.profile-frame img{width:100%;height:100%;object-fit:cover;object-position:center}
+.about h2{font-size:25px;line-height:1.65;color:#b46f8d;margin-top:0}.about p{line-height:2;font-size:14px}
+.quick{border-left:1px solid #e6ccd7;padding-left:28px}.quick div{padding:13px 0;border-bottom:1px solid #eadde2;font-size:13px}
+.strengths{background:var(--teal);color:#fff;padding:36px 0}
+.strength-grid{display:grid;grid-template-columns:190px repeat(3,1fr);gap:18px;align-items:stretch}.strength-head h2{font:700 34px Georgia;margin:0}
+.strength{border:1px solid rgba(255,255,255,.45);padding:22px;border-radius:8px}.strength b{font-size:17px}.num{display:inline-grid;place-items:center;width:40px;height:40px;border-radius:50%;background:#f2cedd;color:#a45e7c;margin-right:10px}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.service{border:1px solid var(--line);border-radius:8px;overflow:hidden;background:#fff}.service-top{height:105px;background:linear-gradient(135deg,#f1d7e2,#f8eef2);position:relative}
+.service:nth-child(1) .service-top:after{content:"SNS";}.service:nth-child(2) .service-top:after{content:"CONTENT";}.service:nth-child(3) .service-top:after{content:"SUPPORT";}
+.service-top:after{position:absolute;right:20px;bottom:12px;font:700 28px Georgia;color:#b77b94;opacity:.7}.service-body{padding:22px}.service-body h3{margin:0 0 12px}.service-body p{line-height:1.9;font-size:14px;margin:0}
+.result{background:var(--pale);padding:35px 0}.result-grid{display:grid;grid-template-columns:1.3fr repeat(4,1fr);gap:10px;align-items:center}.metric{text-align:center;border-left:1px solid #d9bbc8}.metric b{font:700 35px Georgia;color:var(--teal)}.metric span{display:block;font-size:11px;margin-top:5px}
+.works{background:#fffafc}.works-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:18px}.work-card{border:1px solid var(--line);background:#fff;cursor:pointer;transition:.2s;overflow:hidden}.work-card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(49,94,104,.12)}.work-card:nth-child(1),.work-card:nth-child(2){grid-column:span 3}.work-card:nth-child(n+3){grid-column:span 2}
+.work-thumb{height:250px;background:#f9edf2;display:flex;align-items:center;justify-content:center;padding:18px}.work-thumb img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;display:block}
+.work-copy{padding:18px}.work-copy small{color:#b87893;letter-spacing:.14em}.work-copy h3{font-size:16px;margin:10px 0}.work-copy p{font-size:11px;color:#8f6a79;margin:0}
+.mind{background:var(--teal);color:#fff;text-align:center;padding:65px 20px}.mind h2{font-size:28px}.mind p{max-width:720px;margin:auto;line-height:2}
+.contact{background:linear-gradient(135deg,var(--teal) 0 55%,var(--pink) 55%);color:#fff;padding:58px 0}.contact .wrap{display:flex;justify-content:space-between;align-items:center}.contact h2{font-size:30px}
+footer{text-align:center;padding:18px;font-size:11px}
+.modal{position:fixed;inset:0;background:rgba(20,35,40,.82);display:none;align-items:center;justify-content:center;z-index:99;padding:28px}.modal.open{display:flex}.modalbox{background:#fff;width:min(1120px,96vw);height:min(90vh,900px);overflow:auto;border-radius:16px;padding:28px;position:relative}
+.close{position:sticky;float:right;top:0;border:0;background:var(--pink);color:#fff;border-radius:50%;width:44px;height:44px;font-size:25px;cursor:pointer}.modal h2{text-align:center;color:var(--teal);font-size:28px}
+.modal img{display:block;max-width:100%;height:auto;border:0}.modal-note{text-align:center;color:#8c6c78;font-size:13px;margin-bottom:18px}
+.gallery{display:grid;gap:18px}.gallery.feed{display:flex;gap:18px;overflow-x:auto;padding:8px 4px 22px;scroll-snap-type:x mandatory}.gallery.feed img{height:min(68vh,760px);width:auto;max-width:none;scroll-snap-align:start;box-shadow:0 8px 24px rgba(49,94,104,.12)}.gallery.slides{grid-template-columns:1fr}.gallery.slides img{width:100%;box-shadow:0 8px 24px rgba(49,94,104,.10)}.gallery.single{place-items:center}.gallery.single img{max-height:72vh;object-fit:contain;box-shadow:0 8px 24px rgba(49,94,104,.12)}.gallery-count{text-align:center;font-size:12px;color:#a06f82;margin:-8px 0 18px}.gallery.feed::-webkit-scrollbar{height:10px}.gallery.feed::-webkit-scrollbar-thumb{background:#d9b4c4;border-radius:10px}.gallery.feed::-webkit-scrollbar-track{background:#f7edf1;border-radius:10px}
+@media(max-width:800px){header{height:auto;padding:14px}nav a:not(.logo):not(.contact-btn){display:none}.hero{grid-template-columns:1fr}.hero-copy{padding:48px 28px}h1{font-size:39px}.hero-art{height:330px}.about-grid{grid-template-columns:1fr}.profile-frame{max-width:280px;margin:auto}.strength-grid{grid-template-columns:1fr}.services-grid{grid-template-columns:1fr}.result-grid{grid-template-columns:1fr 1fr}.result-grid>div:first-child{grid-column:1/-1}.works-grid{grid-template-columns:1fr}.work-card:nth-child(n){grid-column:span 1}.contact .wrap{display:block}}
+
+/* v7 refinements */
+.hero{display:block;position:relative;background:#fff;padding:0;min-height:0}
+.hero-banner{display:block;width:100%;height:auto}
+.hero-hotspot{position:absolute;display:block;z-index:3;border-radius:999px}
+.hero-hotspot.works-link{left:11.2%;bottom:6.2%;width:17.2%;height:12%}
+.hero-hotspot.contact-link{left:29.8%;bottom:6.2%;width:14.2%;height:12%}
+.strength-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.strength-head{grid-column:1/-1;display:flex;align-items:baseline;gap:22px}
+.strength-head h2{margin:0} .strength-head p{margin:0}
+.strength b{font-size:17px;line-height:1.7;word-break:normal;line-break:strict}
+.service-top{height:118px;display:flex;align-items:center;justify-content:center;position:relative}
+.service-top::after{position:static;font:700 28px Georgia;color:#c987a4;opacity:.72;letter-spacing:.03em}
+.service:nth-child(1) .service-top::after{content:'SNS'}
+.service:nth-child(2) .service-top::after{content:'CONTENT'}
+.service:nth-child(3) .service-top::after{content:'SUPPORT'}
+.service-body p{line-height:1.9;word-break:normal;line-break:strict}
+.decor-flower-left,.decor-flower-right{position:absolute;pointer-events:none;opacity:.72;z-index:0}
+.decor-flower-left{left:0;bottom:0;width:135px} .decor-flower-right{right:0;bottom:0;width:145px}
+.section,.works{position:relative;overflow:hidden} .section>.wrap,.works>.wrap{position:relative;z-index:1}
+.mind p{max-width:880px;text-align:left;font-size:15px;line-height:2.15}
+.contact{background:linear-gradient(135deg,var(--teal) 0 54%,var(--pink) 54%);padding:68px 0}
+.contact .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:55px;align-items:start}
+.contact-form{background:rgba(255,255,255,.96);color:var(--teal);padding:28px;border-radius:18px;box-shadow:0 15px 45px rgba(0,0,0,.12)}
+.contact-form label{display:block;font-size:12px;font-weight:700;margin:0 0 7px}
+.contact-form input,.contact-form textarea{width:100%;box-sizing:border-box;border:1px solid #dfc6d1;border-radius:9px;padding:12px 13px;margin:0 0 15px;font:inherit;color:#264e58;background:#fff}
+.contact-form textarea{min-height:135px;resize:vertical}
+.contact-actions{display:flex;gap:12px;flex-wrap:wrap}
+.contact-actions button,.contact-actions a{border:0;cursor:pointer;text-decoration:none}
+.contact-note{font-size:11px;line-height:1.7;margin-top:12px;color:#765b67}
+@media(max-width:800px){.strength-grid{grid-template-columns:1fr}.strength-head{grid-column:auto;display:block}.contact .wrap{grid-template-columns:1fr}.hero-hotspot{display:none}}
+
+.contact-links{display:flex;flex-direction:column;gap:14px;align-self:center}.contact-links strong{font:700 28px Georgia}.contact-links a{color:#fff;text-decoration:none;font-size:15px}.contact-links a:hover{text-decoration:underline}
+.inquiry-modal{position:fixed;inset:0;background:rgba(25,54,60,.68);z-index:1200;display:none;align-items:center;justify-content:center;padding:24px}.inquiry-modal.open{display:flex}.inquiry-box{width:min(720px,94vw);max-height:90vh;overflow:auto;background:#fff;border-radius:20px;padding:34px;color:var(--teal);position:relative;box-shadow:0 20px 60px rgba(0,0,0,.2)}.inquiry-box h2{font-size:28px;margin:0 0 22px}.inquiry-close{position:absolute;right:18px;top:14px;border:0;background:var(--pink);color:#fff;width:42px;height:42px;border-radius:50%;font-size:24px;cursor:pointer}.inquiry-box label{display:block;font-size:12px;font-weight:700;margin:0 0 7px}.inquiry-box input,.inquiry-box textarea{width:100%;box-sizing:border-box;border:1px solid #dfc6d1;border-radius:9px;padding:12px 13px;margin:0 0 15px;font:inherit}.inquiry-box textarea{min-height:150px;resize:vertical}.inquiry-submit{border:0;cursor:pointer}.form-note{font-size:11px;color:#8c7180;line-height:1.7;margin-top:12px}
+
+/* v10: self-contained display fixes */
+.hero{background:#f8f4f5;display:block;padding:0}
+.hero-inner{position:relative;width:min(1366px,100%);margin:0 auto}
+.hero-banner{display:block;width:100%;height:auto}
+.hero-hotspot{pointer-events:auto;cursor:pointer}
+.about{background:#fff}
+.profile-frame{height:360px;border-radius:180px 180px 0 0;border-left:10px solid var(--pink);background:var(--pale)}
+.profile-frame img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 48%}
+.work-thumb img{display:block!important;visibility:visible!important;opacity:1!important}
+.mind{padding:68px 20px}
+.mind h2{margin:0 0 28px}
+.mind p{max-width:1050px;margin:0 auto;text-align:left;font-size:15px;line-height:2.25;word-break:normal;overflow-wrap:break-word}
+.mind p .mind-line{display:block;margin-bottom:5px}
+.contact{background:var(--teal);padding:68px 0;position:relative;overflow:hidden}
+.contact:after{content:"";position:absolute;right:-100px;top:-150px;width:430px;height:430px;border-radius:50%;background:rgba(191,141,168,.95)}
+.contact .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.contact-links{background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.32);border-radius:18px;padding:30px}
+@media(min-width:1367px){.hero{padding:0 calc((100vw - 1366px)/2)}}
+@media(max-width:800px){.profile-frame{height:330px}.contact .wrap{grid-template-columns:1fr}.contact:after{width:260px;height:260px;right:-120px;top:-100px}}
+
+/* v15 precision fixes */
+/* About photo: keep the original frame size and show the requested pink edge on LEFT + BOTTOM. */
+.profile-frame{
+  width:280px!important;height:360px!important;box-sizing:border-box!important;
+  margin:0 auto!important;border-radius:140px 140px 0 0!important;
+  background:var(--pink)!important;border:0!important;
+  border-left:10px solid var(--pink)!important;border-bottom:10px solid var(--pink)!important;
+  overflow:hidden!important;
+}
+.profile-frame img{width:100%!important;height:100%!important;object-fit:cover!important;object-position:center center!important;display:block!important}
+
+/* Strength cards: every title starts on the same baseline/height. */
+.strength{display:grid!important;grid-template-columns:58px 1fr!important;grid-template-rows:86px auto!important;column-gap:14px!important;align-content:start!important;padding:22px 24px!important}
+.strength .num{grid-column:1!important;grid-row:1!important;margin:0!important;align-self:start!important}
+.strength b{grid-column:2!important;grid-row:1!important;align-self:start!important;display:block!important;line-height:1.7!important;margin:0!important;padding:0!important}
+.strength p{grid-column:1/-1!important;grid-row:2!important;margin:12px 0 0!important;line-height:1.9!important}
+
+/* Work modal: title/count are fixed to one consistent header position. */
+.modalbox{position:relative!important;padding-top:24px!important}
+.modal h2{height:42px!important;display:flex!important;align-items:center!important;justify-content:center!important;margin:0 70px 0!important;line-height:1.2!important}
+.gallery-count{height:24px!important;display:flex!important;align-items:center!important;justify-content:center!important;margin:0 0 8px!important}
+#mi{flex:1 1 auto!important;min-height:0!important;display:flex!important;flex-direction:column!important}
+
+/* Center short galleries as a GROUP, not against the left edge. */
+.gallery,.gallery.feed,.gallery.slides,.gallery.single{box-sizing:border-box!important;width:100%!important}
+.gallery.center-short,.gallery.single{justify-content:center!important}
+.gallery.feed.center-short{justify-content:center!important}
+
+/* Two-image thumbnail modal: center both images together and make them large enough. */
+.gallery.feed.center-short img{max-height:calc(92vh - 170px)!important;height:min(68vh,650px)!important;width:auto!important}
+
+/* Single artwork (salon banner): use the supplied high-resolution image and center it prominently. */
+.gallery.single img{width:auto!important;height:auto!important;max-width:min(790px,82vw)!important;max-height:calc(92vh - 155px)!important;min-width:min(620px,72vw)!important;box-shadow:0 7px 22px rgba(49,94,104,.10)!important}
+
+@media(max-width:800px){
+ .profile-frame{width:280px!important;height:360px!important}
+ .strength{grid-template-columns:52px 1fr!important;grid-template-rows:auto auto!important}
+ .gallery.single img{min-width:0!important;max-width:92vw!important}
+ .gallery.feed.center-short{justify-content:flex-start!important}
+}
+
+</style>
+<style id="v11-fixes">
+/* v11: desktop polish and requested layout fixes */
+html,body{overflow-x:hidden}
+.hero{width:100vw!important;margin-left:calc(50% - 50vw)!important;background:#fff!important;padding:0!important}
+.hero-inner{width:100%!important;max-width:none!important;margin:0!important}
+.hero-banner{width:100%!important;height:auto!important;display:block!important;image-rendering:auto}
+.hero-hotspot{border:2px solid rgba(255,255,255,.0)!important;box-shadow:0 7px 18px rgba(30,57,64,.18);transition:.2s ease;background:rgba(255,255,255,.015)}
+.hero-hotspot:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(30,57,64,.28);border-color:rgba(255,255,255,.7)!important}
+
+/* About: preserve the original photo proportions; no pink gap inside the arch */
+.about-grid{align-items:center!important}
+.profile-frame{width:min(430px,34vw)!important;aspect-ratio:1099/2047!important;height:auto!important;margin:0 auto!important;background:transparent!important;border-radius:215px 215px 0 0!important;overflow:hidden!important;box-shadow:none!important}
+.profile-frame:before,.profile-frame:after{display:none!important}
+.profile-frame img{width:100%!important;height:100%!important;object-fit:cover!important;object-position:center!important;display:block!important;transform:none!important;border-radius:inherit!important}
+
+/* Work Mindsets: true centered composition */
+.mind{text-align:center!important;padding-left:7vw!important;padding-right:7vw!important}
+.mind p{max-width:1180px!important;margin:38px auto 0!important;text-align:center!important;line-height:2.15!important}
+.mind-line{display:block!important;margin:0 auto 10px!important}
+
+/* Contact: cleaner composition, no white frame, intentional line breaks */
+.contact .wrap{grid-template-columns:minmax(0,1.05fr) minmax(420px,.95fr)!important;gap:80px!important;align-items:center!important}
+.contact .wrap>div:first-child p{max-width:760px!important;line-height:2!important;margin-right:auto!important}
+.contact-links{border:0!important;box-shadow:none!important;background:transparent!important;padding:28px 0!important;align-self:center!important}
+.contact-links:before,.contact-links:after{display:none!important}
+.contact-links strong{font-size:34px!important;margin-bottom:14px!important}
+.contact-links a{display:block!important;width:max-content!important;max-width:100%!important;margin:14px 0!important;padding:0!important;border:0!important;background:transparent!important;box-shadow:none!important}
+
+/* All Works: horizontal-only gallery, sized to fit in the viewport without vertical scrolling */
+.modal{padding:18px!important;overflow:hidden!important}
+.modalbox{width:min(1500px,97vw)!important;height:min(92vh,900px)!important;overflow:hidden!important;padding:22px 28px 20px!important;display:flex!important;flex-direction:column!important}
+.modal h2{margin:2px 70px 5px!important;font-size:28px!important;flex:0 0 auto}
+.gallery-count{margin:0 0 10px!important;flex:0 0 auto}
+#mi{min-height:0!important;flex:1 1 auto!important;overflow:hidden!important}
+.gallery,.gallery.feed,.gallery.slides,.gallery.single{height:100%!important;display:flex!important;flex-wrap:nowrap!important;align-items:center!important;justify-content:flex-start!important;gap:22px!important;overflow-x:auto!important;overflow-y:hidden!important;padding:4px 8px 12px!important;scroll-snap-type:x mandatory!important;scrollbar-gutter:stable!important}
+.gallery img,.gallery.feed img,.gallery.slides img,.gallery.single img{display:block!important;flex:0 0 auto!important;width:auto!important;height:auto!important;max-width:none!important;max-height:calc(92vh - 150px)!important;object-fit:contain!important;scroll-snap-align:center!important;box-shadow:0 7px 22px rgba(49,94,104,.12)!important}
+.gallery.single{justify-content:center!important}
+.gallery.single img{max-height:calc(92vh - 135px)!important;min-height:min(64vh,620px)!important}
+.close{position:absolute!important;right:22px!important;top:18px!important;z-index:5!important}
+
+/* decorative floral line art distributed through the site */
+.site-flower{position:absolute;pointer-events:none;z-index:0;opacity:.58;object-fit:contain}
+.site-flower.pink{width:150px}.site-flower.teal{width:125px}
+.about,.strengths,#services,.works,.mind,.contact{position:relative!important;overflow:hidden!important}
+.about .site-flower.pink{right:-22px;bottom:-18px;transform:rotate(-9deg)}
+.strengths .site-flower.teal{left:-30px;bottom:-45px;opacity:.35}
+#services .site-flower.pink{right:18px;top:28px;transform:rotate(12deg);opacity:.42}
+.works .site-flower.pink{left:-24px;bottom:20px;transform:rotate(-8deg);opacity:.34}
+.mind .site-flower.teal{right:-18px;bottom:-50px;opacity:.32}
+.contact .site-flower.pink{right:10px;bottom:-28px;opacity:.34}
+.about>.wrap,.strengths>.wrap,#services>.wrap,.works>.wrap,.contact>.wrap,.mind>*{position:relative;z-index:1}
+
+@media(max-width:900px){
+ .profile-frame{width:min(360px,78vw)!important}
+ .contact .wrap{grid-template-columns:1fr!important;gap:24px!important}
+ .contact-links{padding-top:0!important}
+ .mind p{text-align:left!important}
+ .gallery img,.gallery.feed img,.gallery.slides img,.gallery.single img{max-height:calc(88vh - 145px)!important}
+ .gallery.single img{min-height:0!important}
+}
+</style>
+
+<style id="v12-fixes">
+/* About: KEEP the existing arch frame size. Only the photo changes. */
+.profile-frame{width:280px!important;height:360px!important;aspect-ratio:auto!important;margin:0 auto!important;border-radius:140px 140px 0 0!important;background:var(--pink)!important;border-left:10px solid var(--pink)!important;overflow:hidden!important}
+.profile-frame img{width:100%!important;height:100%!important;object-fit:cover!important;object-position:center 50%!important;transform:none!important}
+/* Works modal: drag horizontally with mouse; no vertical scrolling */
+.gallery{cursor:grab!important;user-select:none!important;-webkit-user-select:none!important}
+.gallery.dragging{cursor:grabbing!important;scroll-snap-type:none!important}
+.gallery img{pointer-events:none!important;user-select:none!important;-webkit-user-drag:none!important}
+.gallery.center-short{justify-content:center!important}
+/* Beauty banner: never enlarge the 336x280 original, so it stays crisp */
+.gallery.single img{min-height:0!important;max-width:336px!important;max-height:280px!important;width:336px!important;height:280px!important;box-shadow:0 7px 22px rgba(49,94,104,.10)!important}
+/* Strength line breaks exactly as requested */
+.strength b{display:inline-block!important;vertical-align:top!important;line-height:1.7!important}
+.strength-indent{display:inline-block;padding-left:0}
+.strength p{line-height:1.9!important}
+/* Decorative flowers: transparent assets only, placed on page edges */
+.site-flower,.decor-flower-left,.decor-flower-right{display:none!important}
+.edge-flower{position:absolute!important;pointer-events:none!important;z-index:0!important;object-fit:contain!important}
+.edge-flower.teal{width:135px!important;opacity:.34!important}
+.edge-flower.pink{width:150px!important;opacity:.48!important}
+.strengths .edge-flower{left:-22px!important;bottom:-36px!important}
+#services .edge-flower{right:-20px!important;bottom:-30px!important}
+.works .edge-flower{left:-24px!important;bottom:-30px!important}
+.mind .edge-flower{right:-20px!important;bottom:-38px!important}
+.contact .edge-flower{right:-22px!important;bottom:-30px!important}
+/* Top banner: use full width without browser interpolation artifacts */
+.hero-banner{display:block!important;width:100%!important;height:auto!important;image-rendering:auto!important}
+@media(max-width:900px){.profile-frame{width:280px!important;height:360px!important}}
+</style>
+
+<style id="v13-fixes">
+/* About: same frame dimensions; use the exact left-side photo from the supplied reference, filling the arch to the bottom. */
+.profile-frame{width:280px!important;height:360px!important;background:transparent!important;border-left:10px solid var(--pink)!important;overflow:hidden!important}
+.profile-frame img{display:block!important;width:100%!important;height:100%!important;object-fit:cover!important;object-position:center center!important;margin:0!important;padding:0!important}
+/* Strengths: restore the clean previous balance. No decorative flower intruding behind the heading/cards. */
+.strengths .edge-flower{display:none!important}
+.strengths{background:var(--teal)!important}
+.strength-grid{position:relative!important;z-index:2!important}
+/* Works modal: keep horizontal-only gallery and make the scrollbar visibly available inside the viewport. */
+#mi{overflow:hidden!important;min-height:0!important;flex:1 1 auto!important}
+.gallery,.gallery.feed,.gallery.slides,.gallery.single{
+  width:100%!important;height:calc(100% - 2px)!important;box-sizing:border-box!important;
+  overflow-x:scroll!important;overflow-y:hidden!important;padding:4px 8px 18px!important;
+  scrollbar-width:auto!important;scrollbar-color:#c48ca7 #f3e7ed!important;
+  cursor:grab!important;touch-action:pan-x!important;justify-content:flex-start!important;
+}
+.gallery::-webkit-scrollbar{height:14px!important;display:block!important}
+.gallery::-webkit-scrollbar-track{background:#f3e7ed!important;border-radius:10px!important}
+.gallery::-webkit-scrollbar-thumb{background:#c48ca7!important;border-radius:10px!important;border:3px solid #f3e7ed!important}
+.gallery.dragging{cursor:grabbing!important;scroll-snap-type:none!important}
+/* Decorative flowers: keep them subtle and strictly on page edges, not over content. */
+#services .edge-flower,.works .edge-flower,.mind .edge-flower,.contact .edge-flower{opacity:.18!important;width:105px!important;filter:none!important}
+#services .edge-flower{right:-42px!important;bottom:-42px!important}
+.works .edge-flower{left:-42px!important;bottom:-42px!important}
+.mind .edge-flower{right:-42px!important;bottom:-42px!important}
+.contact .edge-flower{right:-42px!important;bottom:-42px!important}
+</style>
+
+<style id="v14-hero-fixes">
+.hero-banner{width:100%!important;height:auto!important;display:block!important;image-rendering:auto!important}
+.hero-hotspot{display:flex!important;align-items:center!important;justify-content:center!important;text-decoration:none!important;font-family:"Noto Serif JP","Yu Mincho",serif!important;font-weight:700!important;font-size:clamp(15px,1.25vw,25px)!important;letter-spacing:.03em!important;box-sizing:border-box!important;transition:transform .18s ease,box-shadow .18s ease!important;cursor:pointer!important}
+.hero-hotspot.works-link{background:#c58eaa!important;color:#fff!important;border:2px solid rgba(255,255,255,.25)!important;box-shadow:0 5px 0 rgba(93,55,73,.28),0 10px 22px rgba(32,55,62,.22)!important}
+.hero-hotspot.contact-link{background:#c58eaa!important;color:#fff!important;border:2px solid rgba(255,255,255,.7)!important;box-shadow:0 5px 0 rgba(93,55,73,.28),0 10px 22px rgba(32,55,62,.22)!important}
+.hero-hotspot:hover{transform:translateY(-3px)!important;box-shadow:0 7px 0 rgba(93,55,73,.28),0 14px 26px rgba(32,55,62,.28)!important}
+.hero-hotspot:active{transform:translateY(2px)!important;box-shadow:0 2px 0 rgba(93,55,73,.3),0 5px 12px rgba(32,55,62,.18)!important}
+.hero-hotspot.works-link::before{content:"Worksを見る　→"}
+.hero-hotspot.contact-link::before{content:"お問い合わせ　→"}
+</style>
+
+<style id="v16-final-fixes">
+/* Standalone / final requested fixes */
+.edge-flower,.site-flower,.decor-flower-left,.decor-flower-right{display:none!important}
+/* transparent line-art flower only; no background image/text ghosting */
+.strengths::after{content:"";position:absolute;right:-18px;bottom:-28px;width:150px;height:185px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 220 260'%3E%3Cg fill='none' stroke='%23ffffff' stroke-width='2' opacity='.55'%3E%3Cpath d='M18 252 C58 192 65 127 91 70 M91 70 C80 45 90 22 110 14 C126 36 119 59 91 70 M72 116 C46 102 31 80 35 59 C62 60 80 78 72 116 M84 92 C112 82 134 62 141 40 C115 37 94 53 84 92 M61 160 C37 154 17 136 13 116 C39 111 60 126 61 160 M68 145 C98 143 120 130 134 108 C108 98 81 112 68 145 M48 203 C27 204 10 194 3 178 C24 166 43 176 48 203 M52 190 C78 195 99 188 117 169 C96 154 68 162 52 190'/%3E%3C/g%3E%3C/svg%3E") center/contain no-repeat;opacity:.52;pointer-events:none;z-index:0}
+.strengths .wrap{position:relative;z-index:1}
+/* Strengths: same title baseline, tighter title-to-body spacing */
+.strength{grid-template-columns:58px 1fr!important;grid-template-rows:auto auto!important;align-content:start!important;padding:22px 24px!important}
+.strength .num{grid-column:1!important;grid-row:1!important;align-self:start!important;margin:0!important}
+.strength b{grid-column:2!important;grid-row:1!important;align-self:start!important;min-height:58px!important;line-height:1.65!important;margin:0!important;padding:0!important}
+.strength p{grid-column:1/-1!important;grid-row:2!important;margin:4px 0 0!important;line-height:1.9!important}
+/* About photo: remove every visible pink strip from the photo itself */
+.profile-frame{background:transparent!important;border:0!important;overflow:hidden!important}
+.profile-frame img{width:104%!important;height:104%!important;max-width:none!important;object-fit:cover!important;object-position:center center!important;transform:translate(-2%,-2%) scale(1.015)!important;border:0!important}
+/* Works modal: title/count stay compact and artwork centered */
+.modal h2{margin:2px 70px 2px!important}
+.gallery-count{margin:0 0 5px!important}
+.gallery.single{justify-content:center!important;align-items:center!important}
+.gallery.single img{width:auto!important;height:auto!important;max-width:min(900px,82vw)!important;max-height:calc(92vh - 125px)!important;min-height:0!important;object-fit:contain!important}
+/* Keep visible horizontal scrollbar for multi-image works */
+.gallery.feed,.gallery.slides{overflow-x:scroll!important;justify-content:flex-start!important}
+</style>
+
+<style id="v17-user-fixes">
+/* Hero rebuilt as live HTML/CSS: no screenshot text, no duplicate buttons */
+.hero-v17{display:grid!important;grid-template-columns:49% 51%!important;min-height:510px!important;background:#fff!important;position:relative!important;overflow:hidden!important}
+.hero-v17-copy{background:var(--teal)!important;color:#fff!important;padding:54px 7.2vw 42px 10.2vw!important;position:relative!important;z-index:2!important}
+.hero-v17-copy:before{content:"";position:absolute;left:-12px;bottom:-8px;width:145px;height:300px;background:url("asset-01.webp") left bottom/contain no-repeat;opacity:.7;pointer-events:none}
+.hero-v17-eyebrow{font-family:Georgia,serif;font-size:15px;line-height:1.35;letter-spacing:.28em;margin:0 0 24px;position:relative;z-index:1}
+.hero-v17 h1{font-size:58px!important;line-height:1.35!important;font-weight:500!important;letter-spacing:.06em!important;margin:0 0 24px!important;position:relative;z-index:1}
+.hero-v17-copy p{font-size:17px!important;line-height:1.85!important;margin:0 0 28px!important;position:relative;z-index:1}
+.hero-v17-btns{display:flex!important;gap:22px!important;position:relative;z-index:3}
+.hero-v17-btn{display:flex!important;align-items:center!important;justify-content:center!important;gap:34px!important;min-width:190px!important;height:56px!important;padding:0 28px!important;border-radius:999px!important;font-size:18px!important;font-weight:700!important;box-shadow:0 6px 0 rgba(35,58,65,.22)!important;transition:transform .15s ease,box-shadow .15s ease!important}
+.hero-v17-btn:hover{transform:translateY(2px)!important;box-shadow:0 4px 0 rgba(35,58,65,.22)!important}
+.hero-v17-btn.primary{background:var(--pink)!important;color:#fff!important;border:2px solid #d9aec0!important}
+.hero-v17-btn.secondary{background:var(--pink)!important;color:#fff!important;border:4px solid #f4dce6!important;outline:2px solid #fff!important;outline-offset:0!important}
+.hero-v17-photo{background-position:center!important;background-size:cover!important;background-repeat:no-repeat!important;min-height:510px!important}
+/* Strengths: restore comfortable title/body spacing and clean transparent floral line art */
+.strengths{position:relative!important;overflow:hidden!important;background:var(--teal)!important}
+.strengths::after{display:none!important}
+.strengths::before{content:"";position:absolute;right:-8px;bottom:-8px;width:122px;height:206px;background:url("asset-01.webp") right bottom/contain no-repeat;opacity:.72;pointer-events:none;z-index:0}
+.strengths .wrap{position:relative!important;z-index:1!important}
+.strength{grid-template-columns:58px 1fr!important;grid-template-rows:auto auto!important;padding:22px 24px!important}
+.strength b{min-height:58px!important;line-height:1.65!important;margin:0!important}
+.strength p{margin:18px 0 0!important;line-height:1.9!important}
+@media(max-width:800px){.hero-v17{grid-template-columns:1fr!important}.hero-v17-copy{padding:42px 28px!important}.hero-v17 h1{font-size:40px!important}.hero-v17-photo{min-height:330px!important}.hero-v17-btns{flex-wrap:wrap!important}}
+</style>
+
+<style id="v18-requested-fixes">
+/* 1. Result section: same teal family as Strengths, all text white. */
+.result{background:var(--teal)!important;color:#fff!important;padding:42px 0!important}
+.result small,.result h2,.result p,.result .metric span{color:#fff!important}
+.result .metric{border-left:1px solid rgba(255,255,255,.45)!important}
+.result .metric b{color:#fff!important}
+
+/* 2-4. Hero: restore the supplied design exactly; do not rebuild or rasterize its typography/buttons. */
+.hero-v18{display:block!important;position:relative!important;width:100%!important;min-height:0!important;background:#fff!important;overflow:hidden!important;margin:0!important;padding:0!important}
+.hero-v18-banner{display:block!important;width:100%!important;height:auto!important;object-fit:contain!important;image-rendering:auto!important}
+.hero-v18-hotspot{position:absolute!important;display:block!important;z-index:4!important;background:transparent!important;border:0!important;border-radius:999px!important;box-shadow:none!important}
+.hero-v18-hotspot.works{left:10.1%!important;bottom:4.6%!important;width:18.3%!important;height:13.7%!important}
+.hero-v18-hotspot.contact-hit{left:29.1%!important;bottom:4.6%!important;width:15.2%!important;height:13.7%!important}
+.hero-v18-hotspot:hover{background:rgba(255,255,255,.08)!important}
+
+/* 5. Remove every old raster/boxed flower fragment. Use clean vector line art only. */
+.edge-flower,.site-flower,.decor-flower-left,.decor-flower-right{display:none!important}
+.strengths::after{
+ content:""!important;display:block!important;position:absolute!important;right:-10px!important;bottom:-18px!important;
+ width:170px!important;height:220px!important;pointer-events:none!important;z-index:0!important;opacity:.42!important;
+ background-repeat:no-repeat!important;background-position:center!important;background-size:contain!important;
+ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 190 245'%3E%3Cg fill='none' stroke='%23ffffff' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M38 240C58 204 74 170 88 133C101 98 109 64 119 25'/%3E%3Cpath d='M108 62C92 49 91 31 103 18C118 29 123 46 108 62Z'/%3E%3Cpath d='M99 92C119 76 138 76 150 89C136 106 117 108 99 92Z'/%3E%3Cpath d='M82 128C61 119 50 101 56 84C77 87 91 104 82 128Z'/%3E%3Cpath d='M73 158C95 144 116 146 127 161C111 176 90 176 73 158Z'/%3E%3Cpath d='M58 194C38 190 24 176 25 159C45 157 61 172 58 194Z'/%3E%3Cpath d='M54 205C76 194 95 200 104 215C87 227 68 224 54 205Z'/%3E%3C/g%3E%3C/svg%3E")!important;
+}
+
+/* 6. Strength titles: vertically center title against its number and keep all three aligned. */
+.strength{grid-template-columns:58px 1fr!important;grid-template-rows:72px auto!important;column-gap:14px!important;align-content:start!important}
+.strength .num{grid-column:1!important;grid-row:1!important;align-self:center!important;margin:0!important}
+.strength b{grid-column:2!important;grid-row:1!important;align-self:center!important;display:block!important;min-height:0!important;line-height:1.65!important;margin:0!important;padding:0!important}
+.strength p{grid-column:1/-1!important;grid-row:2!important;margin:18px 0 0!important;line-height:1.9!important}
+
+/* 7. Contact: one combined heading; remove duplicate small/secondary Contact heading. */
+.contact h2{font-size:34px!important;line-height:1.4!important;margin:0 0 28px!important}
+.contact h2 span{font-family:Georgia,serif!important;font-size:1.08em!important}
+.contact-links strong,.contact small{display:none!important}
+.contact-links{padding-top:10px!important}
+.contact-actions .btn.primary{background:var(--pink)!important;color:#fff!important;border:0!important;border-radius:999px!important;padding:15px 30px!important;box-shadow:0 5px 0 rgba(93,55,73,.24),0 10px 20px rgba(30,57,64,.18)!important;font-weight:700!important}
+
+@media(max-width:800px){
+ .hero-v18-hotspot{display:none!important}
+ .result-grid{grid-template-columns:1fr 1fr!important}
+ .strength{grid-template-rows:auto auto!important}
+ .contact h2{font-size:28px!important}
+}
+</style>
+
+<style id="v19-user-fixes">
+/* Contact: match the former pale-pink result-section palette. */
+.contact{background:var(--pale)!important;color:var(--ink)!important}
+.contact h2,.contact p,.contact a{color:var(--ink)!important}
+.contact h2 span{color:var(--ink)!important}
+.contact:before{background:var(--pink)!important;opacity:.92!important}
+.contact-actions .btn.primary{background:var(--pink)!important;color:#fff!important}
+
+/* Hero click areas must be invisible: preserve the supplied banner exactly. */
+.hero-v18-hotspot,.hero-v18-hotspot:hover{background:transparent!important;border:0!important;box-shadow:none!important;outline:0!important}
+
+/* Strength cards: all three title blocks centered consistently against the number. */
+.strength{grid-template-columns:58px minmax(0,1fr)!important;grid-template-rows:76px auto!important;column-gap:14px!important}
+.strength .num{grid-column:1!important;grid-row:1!important;align-self:center!important;justify-self:center!important}
+.strength b{grid-column:2!important;grid-row:1!important;align-self:center!important;justify-self:stretch!important;width:100%!important;text-align:center!important;line-height:1.55!important;margin:0!important;padding:0 6px!important;min-height:0!important}
+.strength p{grid-column:1/-1!important;grid-row:2!important;margin:18px 0 0!important}
+
+/* Delicate edge floral line art, based on the supplied portfolio reference. */
+.strengths::before,.strengths::after{content:""!important;position:absolute!important;pointer-events:none!important;z-index:0!important;background-repeat:no-repeat!important;background-position:center!important;background-size:contain!important;opacity:.42!important}
+.strengths::before{left:-22px!important;bottom:-42px!important;width:145px!important;height:190px!important;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 230'%3E%3Cg fill='none' stroke='%23f2cedd' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 225C45 185 61 145 72 101C80 70 91 42 112 18'/%3E%3Cpath d='M77 91C55 82 43 65 47 48C67 48 82 65 77 91Z'/%3E%3Cpath d='M84 68C103 53 122 51 135 62C124 79 104 83 84 68Z'/%3E%3Cpath d='M58 137C37 130 23 114 25 97C45 95 61 111 58 137Z'/%3E%3Cpath d='M63 122C83 109 103 111 114 124C100 140 80 140 63 122Z'/%3E%3Cpath d='M40 181C23 178 10 166 9 151C27 146 42 158 40 181Z'/%3E%3Cpath d='M44 169C63 158 80 161 90 174C76 186 59 184 44 169Z'/%3E%3C/g%3E%3C/svg%3E")!important}
+.strengths::after{right:-18px!important;bottom:-34px!important;width:160px!important;height:205px!important;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 230'%3E%3Cg fill='none' stroke='%23f2cedd' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M22 224C50 187 66 149 77 108C87 72 99 43 120 17'/%3E%3Cpath d='M82 97C61 88 49 70 53 53C73 54 88 71 82 97Z'/%3E%3Cpath d='M91 72C110 57 130 56 142 68C130 84 110 87 91 72Z'/%3E%3Cpath d='M64 143C43 136 30 120 32 103C52 101 68 117 64 143Z'/%3E%3Cpath d='M69 128C89 115 109 117 120 131C106 146 86 146 69 128Z'/%3E%3Cpath d='M46 186C28 183 15 171 14 156C32 151 47 163 46 186Z'/%3E%3C/g%3E%3C/svg%3E")!important}
+.strengths .wrap{position:relative!important;z-index:1!important}
+
+@media(max-width:800px){
+ .strength b{text-align:left!important}
+ .strengths::before{width:105px!important;height:145px!important}
+ .strengths::after{width:110px!important;height:150px!important}
+}
+</style>
+
+<style id="v20-user-fixes">
+/* v20 — requested-only corrections */
+
+/* CONTACT: keep the current pale-pink palette/layout; only circle + CTA become teal. */
+.contact{background:#f8e9ef!important;color:var(--ink)!important}
+.contact::before{background:var(--teal)!important}
+.contact .contact-circle,.contact .circle,.contact [class*="circle"]{background:var(--teal)!important}
+.contact .inquiry-open,.contact a.inquiry-open,.contact .contact-btn,
+.contact a[href*="contact"]{ }
+.contact .contact-cta,.contact .btn,.contact button,.contact .inquiry-open{
+  background:var(--teal)!important;color:#fff!important;border-color:var(--teal)!important;
+}
+/* the large decorative circle is a pseudo element in the current build */
+.contact:after{background:var(--teal)!important}
+
+/* HERO: remove the screenshot-button + CSS-button double rendering.
+   Mask only the original button strip, then draw one crisp HTML/CSS button layer. */
+.hero-v18{position:relative!important;overflow:hidden!important;background:#fff!important}
+.hero-v18::after{
+  content:"";position:absolute;z-index:2;left:9.5%;bottom:3.1%;width:36.7%;height:17.5%;
+  background:#426d78;border-radius:4px;pointer-events:none;
+}
+.hero-v18 .hero-hotspot,.hero-v18 a[class*="works"],.hero-v18 a[class*="contact"]{
+  z-index:4!important;
+}
+.hero-v18 .hero-hotspot{
+  display:flex!important;align-items:center!important;justify-content:center!important;
+  background:#bf8da8!important;color:#fff!important;border:2px solid #d9aec0!important;
+  outline:0!important;box-shadow:0 5px 0 rgba(80,61,70,.28),0 10px 20px rgba(32,55,62,.18)!important;
+  border-radius:999px!important;font-family:"Yu Mincho","Hiragino Mincho ProN",serif!important;
+  font-size:clamp(15px,1.28vw,25px)!important;font-weight:700!important;letter-spacing:.02em!important;
+}
+.hero-v18 .hero-hotspot::before{display:block!important}
+.hero-v18 .works-link::before{content:"Worksを見る　→"!important}
+.hero-v18 .contact-link::before{content:"お問い合わせ　→"!important}
+.hero-v18 .works-link{left:10.7%!important;bottom:5.4%!important;width:18.1%!important;height:12.7%!important}
+.hero-v18 .contact-link{left:30.1%!important;bottom:5.4%!important;width:14.8%!important;height:12.7%!important}
+
+/* Fine botanical line art: transparent SVG only, no raster boxes/text/furniture. */
+.about::after,#services::after,.works::after,.mind::after,.contact::before{
+  content:"";position:absolute;pointer-events:none;z-index:0;background-repeat:no-repeat;background-size:contain;
+  background-position:center;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 260 300'%3E%3Cg fill='none' stroke='%23bf8da8' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round' opacity='.72'%3E%3Cpath d='M18 290C62 236 76 181 91 124C102 82 121 44 154 18'/%3E%3Cpath d='M88 138C56 130 36 109 31 83C61 80 83 100 88 138Z'/%3E%3Cpath d='M101 102C123 72 151 62 178 69C168 96 140 111 101 102Z'/%3E%3Cpath d='M70 190C44 190 22 176 14 154C39 143 63 158 70 190Z'/%3E%3Cpath d='M78 170C108 157 136 160 155 178C133 198 103 197 78 170Z'/%3E%3Cpath d='M47 237C27 242 10 234 3 219C21 205 41 214 47 237Z'/%3E%3Cpath d='M54 222C77 216 99 224 111 242C91 255 68 248 54 222Z'/%3E%3Cpath d='M151 20C139 6 145 -5 159 2C171 9 171 20 154 28C172 23 181 34 172 45C162 55 151 47 153 29C147 47 133 50 127 38C121 26 131 17 151 20Z'/%3E%3C/g%3E%3C/svg%3E");
+}
+.about::after{right:-18px;bottom:-30px;width:165px;height:205px;opacity:.62}
+#services::after{left:-20px;bottom:-36px;width:175px;height:210px;opacity:.58;transform:scaleX(-1)}
+.works::after{right:-18px;bottom:-32px;width:170px;height:210px;opacity:.48}
+.mind::after{left:-20px;bottom:-38px;width:175px;height:215px;opacity:.30;filter:brightness(0) invert(1)}
+/* contact uses teal botanical line art; keep it separate from the large teal circle */
+.contact::before{left:-18px!important;bottom:-34px!important;right:auto!important;top:auto!important;width:175px!important;height:215px!important;border-radius:0!important;opacity:.42!important;background-color:transparent!important}
+.about>.wrap,#services>.wrap,.works>.wrap,.mind>*,.contact>.wrap{position:relative!important;z-index:1!important}
+
+@media(max-width:800px){
+  .hero-v18::after{display:none!important}
+  .hero-v18 .hero-hotspot{display:none!important}
+  .about::after,#services::after,.works::after,.mind::after,.contact::before{width:105px!important;height:135px!important;opacity:.25!important}
+}
+</style>
+
+<style id="v21-fixes">
+:root{--pink:#c68fa5!important;--teal:#426d78!important}
+/* Hero: do not reuse rasterized typography/buttons. Cover those areas and render crisp live text. */
+.hero-v18 .hero-hotspot,.hero-v18::after{display:none!important}
+.hero-v18{position:relative!important;overflow:hidden!important}
+.hero-live-copy{position:absolute;z-index:8;left:0;top:0;bottom:0;width:49.2%;box-sizing:border-box;background:var(--teal);color:#fff;padding:4.5% 4.1% 3.4% 10.2%;display:flex;flex-direction:column;justify-content:center}
+.hero-live-copy .eyebrow{font-family:Georgia,serif;font-size:clamp(12px,1.15vw,22px);letter-spacing:.28em;line-height:1.35;margin:0 0 2.1vw}
+.hero-live-copy h1{font-family:"Yu Mincho","Hiragino Mincho ProN",serif;font-weight:400;font-size:clamp(34px,4.15vw,80px);line-height:1.34;letter-spacing:.03em;margin:0 0 1.5vw;text-shadow:none}
+.hero-live-copy p{font-family:"Yu Mincho","Hiragino Mincho ProN",serif;font-size:clamp(13px,1.35vw,25px);line-height:1.8;margin:0;letter-spacing:.02em}
+.hero-live-copy .hero-lineflower{position:absolute;left:-18px;bottom:-20px;width:155px;height:330px;opacity:.52;pointer-events:none}
+.hero-live-badge{position:absolute;z-index:9;right:1.3%;bottom:7%;width:15.3vw;height:15.3vw;min-width:150px;min-height:150px;max-width:245px;max-height:245px;border-radius:50%;background:#f7e6ed;display:flex;align-items:center;justify-content:center;text-align:center;color:#a75e7a;font-family:"Yu Mincho","Hiragino Mincho ProN",serif;font-size:clamp(15px,1.35vw,25px);line-height:1.65;box-shadow:none}
+/* remove the stray empty translucent rectangle/flower artifact */
+.hero-v18 [class*="flower"],.hero-v18 .edge-flower,.hero-v18 .site-flower{display:none!important}
+/* Contact: title on one baseline, CTA teal, pink unified to supplied swatch */
+.contact{background:#f8e9ef!important;color:#173f49!important}
+.contact:after{background:var(--teal)!important}
+.contact .wrap{grid-template-columns:1fr 1fr!important;gap:72px!important;align-items:center!important}
+.contact h2{display:flex!important;align-items:baseline!important;gap:34px!important;margin:0 0 44px!important;white-space:nowrap!important;font-size:clamp(31px,3.1vw,56px)!important;line-height:1.1!important;color:#173f49!important}
+.contact h2 span{font-family:Georgia,serif;font-size:1em!important}
+.contact .wrap>div:first-child p{margin:0 0 28px!important;line-height:2!important;color:#173f49!important}
+.contact-links{padding:0!important;justify-content:center!important;gap:28px!important}
+.contact-links a{color:#173f49!important;margin:0!important}
+.contact .contact-actions .btn,.contact .inquiry-open{background:var(--teal)!important;border-color:var(--teal)!important;color:#fff!important;box-shadow:0 7px 0 rgba(32,70,79,.22),0 14px 26px rgba(32,70,79,.12)!important}
+/* Use the exact supplied dusty pink wherever the site pink token appears. */
+.btn.primary,.number,.tag,.work-no{background:var(--pink)!important}
+@media(max-width:800px){.hero-live-copy{position:relative;width:100%;padding:42px 28px}.hero-v18-banner{display:none!important}.hero-live-badge{display:none}.hero-live-copy .hero-lineflower{opacity:.28}.contact h2{white-space:normal!important;gap:14px!important;flex-wrap:wrap!important}.contact .wrap{grid-template-columns:1fr!important}}
+</style>
+
+<style id="v22-fixes">
+:root{--pink:#c58ea5!important;--teal:#426d78!important}
+/* Hero rebuilt as one clean composition. The old banner and every old overlay are hidden. */
+.hero-v18{display:grid!important;grid-template-columns:49% 51%!important;min-height:510px!important;background:#fff!important;position:relative!important;overflow:hidden!important}
+.hero-v18-banner,.hero-live-copy,.hero-live-badge,.hero-v18-hotspot{display:none!important}
+.hero-v22-copy{position:relative;z-index:2;background:var(--teal);color:#fff;padding:52px 52px 44px max(72px,10vw);display:flex;flex-direction:column;justify-content:center;box-sizing:border-box}
+.hero-v22-copy .eyebrow{font:400 clamp(13px,1.15vw,21px)/1.35 Georgia,serif;letter-spacing:.27em;margin-bottom:26px}
+.hero-v22-copy h1{font-family:"Yu Mincho","Hiragino Mincho ProN",serif;font-weight:400;font-size:clamp(42px,4.2vw,76px);line-height:1.32;letter-spacing:.03em;margin:0 0 22px;text-align:left!important;text-shadow:none!important}
+.hero-v22-copy p{font-family:"Yu Mincho","Hiragino Mincho ProN",serif;font-size:clamp(14px,1.25vw,22px);line-height:1.9;margin:0;letter-spacing:.015em}
+.hero-v22-flower{position:absolute;left:-18px;bottom:-16px;width:155px;height:320px;opacity:.52;pointer-events:none}
+.hero-v22-photo{position:relative;min-height:510px;background:url('assets/hero_photo.png') center/cover no-repeat;overflow:hidden}
+.hero-v22-photo:before{content:"";position:absolute;left:-36px;top:-94px;width:245px;height:245px;border-radius:50%;background:var(--pink);z-index:1}
+.hero-v22-sign{position:absolute;left:36%;top:34%;z-index:2;color:#fff;font:italic 400 clamp(34px,3vw,58px)/1 Georgia,serif;letter-spacing:.02em;text-shadow:0 1px 3px rgba(0,0,0,.08)}
+.hero-v22-sign:after{content:"✿";font-style:normal;font-size:.45em;color:#efb7cc;margin-left:6px;vertical-align:middle}
+.hero-v22-badge{position:absolute;right:4.5%;bottom:8%;z-index:2;width:190px;height:190px;border-radius:50%;background:#f8e8ee;color:#a75e7a;display:flex;align-items:center;justify-content:center;text-align:center;font-family:"Yu Mincho","Hiragino Mincho ProN",serif;font-size:18px;line-height:1.65}
+/* Strengths: titles are left aligned, never centered. */
+.strength b{text-align:left!important;justify-self:stretch!important}
+/* Services: add about one character of air between the 01/title line and body copy. */
+.service-body h3{margin:0 0 1em!important}
+/* Contact: exact pink, stacked heading, larger account details. */
+.contact{background:#f8e9ef!important;color:#173f49!important}
+.contact:after{background:var(--teal)!important}
+.contact-title-v22{display:inline-flex;flex-direction:column;align-items:stretch;margin:0 0 34px;color:#173f49}
+.contact-title-v22 .en{font:700 clamp(42px,3.5vw,62px)/1 Georgia,serif;text-align:left}
+.contact-title-v22 .jp{font-family:"Yu Mincho","Hiragino Mincho ProN",serif;font-size:clamp(16px,1.25vw,21px);line-height:1.4;text-align:center;letter-spacing:.08em;margin-top:9px;white-space:nowrap}
+.contact h2{display:none!important}
+.contact-links a{font-size:clamp(18px,1.25vw,22px)!important;line-height:1.6!important;color:#173f49!important}
+.contact .contact-actions .btn,.contact .inquiry-open{background:var(--teal)!important;border-color:var(--teal)!important;color:#fff!important}
+@media(max-width:800px){
+ .hero-v18{grid-template-columns:1fr!important}.hero-v22-copy{padding:44px 28px}.hero-v22-photo{min-height:360px}.hero-v22-badge{width:150px;height:150px;font-size:15px}.hero-v22-sign{left:30%}
+ .contact-title-v22 .en{text-align:left}.contact-links a{font-size:18px!important}
+}
+</style>
+
+<style id="v26-targeted-fixes">
+/* v26: only the requested corrections */
+/* HERO: keep the supplied banner artwork exactly as-is. Hotspots are invisible click targets only. */
+.hero-hotspot,.hero-hotspot.works-link,.hero-hotspot.contact-link{
+  background:transparent!important;border:0!important;outline:0!important;box-shadow:none!important;
+  color:transparent!important;font-size:0!important;text-shadow:none!important;
+}
+.hero-hotspot:hover{background:rgba(255,255,255,.06)!important;border:0!important;outline:0!important;box-shadow:none!important;transform:none!important}
+
+/* STRENGTHS: bring 01/02/03 and their headings closer; keep headings on natural lines. */
+.strength{grid-template-columns:78px minmax(0,1fr)!important;column-gap:16px!important;padding-left:34px!important;padding-right:30px!important}
+.strength .num{margin:0!important;justify-self:start!important}
+.strength b{margin:0!important;white-space:normal!important;word-break:keep-all!important;overflow-wrap:normal!important;line-break:strict!important}
+.strength p{grid-column:1/-1!important;margin-left:0!important;padding-left:0!important}
+.strength-indent{padding-left:0!important}
+
+/* SERVICES: return the soft pink from the earlier card design. */
+#services .service-top{background:#f3dfe8!important}
+#services .service-top::before{color:#d99ab7!important}
+
+/* CONTACT: pale pink field + dusty rose typography, green accent circle/button. */
+.contact{background:#f7edf2!important;color:#b46f8d!important}
+.contact h2,.contact h2 span,.contact p,.contact a,.contact-links a{color:#b46f8d!important}
+.contact .btn.primary,.contact .inquiry-open{background:#426d78!important;color:#fff!important;border:0!important;box-shadow:none!important;filter:none!important}
+.contact .btn.primary:hover,.contact .inquiry-open:hover{box-shadow:none!important;filter:none!important;transform:translateY(-1px)!important}
+.contact::after{background:#426d78!important}
+/* align the first descriptive line and email on the same horizontal level */
+.contact .wrap{align-items:start!important}
+.contact .wrap>div:first-child>p{margin-top:54px!important}
+.contact-links{padding-top:54px!important;align-self:start!important}
+
+/* Replace repeated line-art with three different botanical silhouettes. */
+.strengths .edge-flower,.strengths .site-flower,#services .edge-flower,#services .site-flower,.contact .edge-flower,.contact .site-flower{display:none!important}
+.strengths::after{content:""!important;display:block!important;position:absolute!important;left:-18px!important;bottom:-10px!important;width:175px!important;height:220px!important;opacity:.42!important;background-repeat:no-repeat!important;background-size:contain!important;background-position:left bottom!important;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 230'%3E%3Cg fill='none' stroke='%23d7a4bd' stroke-width='2.2' stroke-linecap='round'%3E%3Cpath d='M18 230C28 181 43 145 69 111C90 83 103 50 107 15'/%3E%3Cpath d='M55 131C28 126 14 110 8 91C31 89 50 101 62 120'/%3E%3Cpath d='M75 103C55 88 50 68 55 50C76 58 88 75 86 94'/%3E%3Cpath d='M92 68C109 50 128 44 146 49C135 68 117 78 98 77'/%3E%3Cpath d='M38 171C58 151 79 147 98 153C84 174 63 183 43 181'/%3E%3Cpath d='M23 203C7 190 2 174 5 159C23 164 35 178 35 194'/%3E%3C/g%3E%3C/svg%3E")!important}
+#services::after{content:"";position:absolute;right:-10px;top:36px;width:190px;height:185px;opacity:.28;background-repeat:no-repeat;background-size:contain;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 190'%3E%3Cg fill='none' stroke='%23bb87a3' stroke-width='2'%3E%3Cpath d='M185 178C149 144 126 108 109 61'/%3E%3Cpath d='M113 72C85 68 65 54 52 31C78 28 101 40 117 60'/%3E%3Cpath d='M130 106C154 91 175 90 194 99C179 119 157 126 136 119'/%3E%3Cpath d='M92 34C91 19 101 7 114 4C121 18 117 31 106 40C97 39 91 37 92 34Z'/%3E%3Cpath d='M53 31C43 15 27 10 13 15C17 33 31 44 49 44'/%3E%3C/g%3E%3C/svg%3E")}
+.contact::before{content:"";position:absolute;left:8px;bottom:-22px;width:245px;height:205px;opacity:.34;background-repeat:no-repeat;background-size:contain;background-position:left bottom;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 250 210'%3E%3Cg fill='none' stroke='%23b46f8d' stroke-width='2'%3E%3Cpath d='M18 205C53 168 73 132 83 83C89 54 104 32 127 16'/%3E%3Cpath d='M55 157C35 145 17 145 3 154C14 171 31 177 50 171'/%3E%3Cpath d='M72 121C96 105 118 103 138 113C124 133 101 140 80 133'/%3E%3Cpath d='M84 81C63 67 56 48 61 30C82 36 95 52 96 71'/%3E%3Cpath d='M118 23C127 4 145 -3 160 4C158 22 145 34 127 36'/%3E%3Cpath d='M41 178C58 183 69 195 72 208M49 170C27 178 17 193 17 209'/%3E%3C/g%3E%3C/svg%3E")}
+</style>
+
+
+<style id="v34-hero-exact-fix">
+/* Use the clean hero artwork exactly as supplied. Hotspots are click-only and do not alter the artwork. */
+.hero-v18-banner{display:block!important;width:100%!important;height:auto!important;filter:none!important;image-rendering:auto!important}
+.hero-v18-hotspot,.hero-v18-hotspot:hover,.hero-v18-hotspot:active{background:transparent!important;border:0!important;box-shadow:none!important;color:transparent!important;font-size:0!important;outline:0!important;transform:none!important}
+.hero-v18-hotspot::before,.hero-v18-hotspot::after{content:none!important;display:none!important}
+</style>
+
+<style id="v38-hero-crisp-fix">
+/* v38: hero image is a 2x sharpened source with raster buttons removed.
+   Buttons are live HTML, matching the bottom Contact pill style: no white outline, no inset/stacked look. */
+.hero-v18{position:relative!important;overflow:hidden!important;background:#3f727c!important}
+.hero-v18-banner{display:block!important;width:100%!important;height:auto!important;image-rendering:auto!important}
+.hero-v18-hotspot{
+  position:absolute!important;z-index:10!important;
+  display:flex!important;align-items:center!important;justify-content:center!important;gap:2.2em!important;
+  box-sizing:border-box!important;text-decoration:none!important;
+  background:#c58eaa!important;color:#fff!important;
+  border:0!important;border-radius:999px!important;box-shadow:none!important;
+  font-family:"Noto Serif JP","Yu Mincho","Hiragino Mincho ProN",serif!important;
+  font-weight:600!important;font-size:clamp(15px,1.22vw,22px)!important;line-height:1!important;letter-spacing:.02em!important;
+  cursor:pointer!important;transition:transform .18s ease,filter .18s ease!important;
+}
+.hero-v18-hotspot.works{left:11.35%!important;bottom:5.0%!important;width:17.05%!important;height:11.8%!important}
+.hero-v18-hotspot.contact-hit{left:29.80%!important;bottom:5.0%!important;width:14.00%!important;height:11.8%!important}
+.hero-v18-hotspot span,.hero-v18-hotspot b{display:block!important;color:#fff!important;text-shadow:none!important}
+.hero-v18-hotspot b{font-family:serif!important;font-size:.95em!important;font-weight:400!important}
+.hero-v18-hotspot:hover{transform:translateY(-1px)!important;filter:brightness(1.03)!important;background:#c58eaa!important}
+@media(max-width:800px){
+ .hero-v18-hotspot{font-size:clamp(10px,2.1vw,15px)!important;gap:1em!important}
+}
+</style>
+
+<style id="v39-hero-final">
+/* Hero: one clean live button layer only. No duplicate pseudo-labels. */
+.hero-v18-hotspot::before,.hero-v18-hotspot::after{content:none!important;display:none!important}
+.hero-v18-hotspot span,.hero-v18-hotspot b{display:inline-block!important;white-space:nowrap!important;line-height:1!important}
+.hero-v18-hotspot{display:flex!important;align-items:center!important;justify-content:center!important;gap:28px!important;background:#c58eaa!important;color:#fff!important;border:0!important;border-radius:999px!important;box-shadow:none!important;font-size:clamp(15px,1.08vw,20px)!important;font-weight:700!important;white-space:nowrap!important;padding:0 24px!important;box-sizing:border-box!important}
+.hero-v18-hotspot.works{left:10.15%!important;bottom:4.30%!important;width:18.35%!important;height:13.25%!important}
+.hero-v18-hotspot.contact-hit{left:29.25%!important;bottom:4.30%!important;width:15.05%!important;height:13.25%!important}
+.hero-v18-hotspot:hover,.hero-v18-hotspot:active{background:#c58eaa!important;transform:none!important;box-shadow:none!important}
+</style>
+
+<style id="v40-final-fixes">
+/* v40: one and only one hero button layer */
+.hero-v18-hotspot{display:none!important}
+.hero-v40-buttons{position:absolute;left:10.2%;bottom:4.4%;z-index:30;display:flex;gap:18px;align-items:center}
+.hero-v40-btn{height:58px;padding:0 34px;border:0;border-radius:999px;background:#c58eaa;color:#fff;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:34px;font-family:"Yu Mincho","Hiragino Mincho ProN",serif;font-size:clamp(16px,1.12vw,21px);font-weight:700;line-height:1;white-space:nowrap;box-shadow:none}
+.hero-v40-btn.works{min-width:220px}.hero-v40-btn.contact{min-width:220px}
+/* Strengths: exact requested wrapping */
+.strengths .strength b{white-space:normal!important;word-break:keep-all!important;overflow-wrap:normal!important;line-height:1.6!important}
+/* Hero image: only text-bearing regions receive a local clarity overlay via the processed source; no global filter. */
+.hero-v18-banner{filter:none!important}
+@media(max-width:800px){.hero-v40-buttons{display:none!important}}
+</style>
+
+<style id="v41-requested-fixes">
+/* v41: crisp live hero typography; the photograph/layout itself is untouched. */
+.hero-v18{position:relative!important;background:#3f727c!important}
+/* Hide only the rasterized text zones with matching artwork colors, then redraw as live HTML. */
+.hero-live-copy{position:absolute;z-index:22;left:7.15%;top:7.0%;width:38.4%;height:71.5%;background:#3f727c;color:#fff;padding:0;display:flex;flex-direction:column;justify-content:flex-start;font-family:"Yu Mincho","Hiragino Mincho ProN",serif}
+.hero-live-eyebrow{font-family:Georgia,"Times New Roman",serif;font-size:clamp(11px,.86vw,17px);line-height:1.35;letter-spacing:.29em;margin:0 0 2.25vw;color:#fff;font-weight:500}
+.hero-live-title{font-size:clamp(36px,4.25vw,82px);line-height:1.32;letter-spacing:.035em;font-weight:400;margin:0;color:#fff;text-shadow:none;-webkit-font-smoothing:antialiased;text-rendering:geometricPrecision}
+.hero-live-desc{font-size:clamp(13px,1.18vw,23px);line-height:1.72;letter-spacing:.015em;font-weight:400;margin:2.0vw 0 0;color:#fff;text-shadow:none;-webkit-font-smoothing:antialiased;text-rendering:geometricPrecision}
+/* Rebuild the right pink message as live HTML for crisp type. */
+.hero-live-badge{position:absolute;z-index:23;right:2.1%;bottom:-2.7%;width:15.4vw;height:15.4vw;min-width:190px;min-height:190px;max-width:315px;max-height:315px;border-radius:50%;background:#f4dce6;display:flex;align-items:center;justify-content:center;text-align:center;color:#9f5877;font-family:"Yu Mincho","Hiragino Mincho ProN",serif;font-size:clamp(13px,1.12vw,22px);line-height:1.72;font-weight:600;letter-spacing:.02em;box-shadow:none}
+.hero-live-badge .dark{color:#173b49;font-size:.82em}
+/* One button row only. Both buttons are identical pink pills. */
+.hero-v40-buttons{left:7.15%!important;bottom:3.25%!important;gap:18px!important;z-index:35!important}
+.hero-v40-btn{height:54px!important;min-width:220px!important;padding:0 34px!important;background:#c58eaa!important;color:#fff!important;border:0!important;border-radius:999px!important;box-shadow:none!important;font-size:clamp(15px,1.03vw,20px)!important;line-height:1!important;gap:34px!important}
+.hero-v40-btn.inquiry{background:#c58eaa!important;color:#fff!important}
+/* Strength titles: exact requested line breaks; slightly smaller so line 1 does not wrap again. */
+.strengths .strength b{font-size:17px!important;line-height:1.65!important;white-space:nowrap!important;word-break:keep-all!important;overflow-wrap:normal!important}
+@media(max-width:1200px){.strengths .strength b{font-size:15px!important}.hero-v40-btn{min-width:190px!important;height:48px!important}}
+@media(max-width:800px){.hero-live-copy,.hero-live-badge,.hero-v40-buttons{display:none!important}}
+</style>
+</head><body>
+<header><div class="wrap" style="width:100%"><nav><a class="logo" href="#">Saku<span>✿</span></a><a href="#about">About</a><a href="#services">Services</a><a href="#works">Works</a><a href="#mind">Mindsets</a><a href="#contact">Contact</a><a class="contact-btn inquiry-open" href="#">お問い合わせ</a></nav></div></header>
+<section class="hero hero-v18" aria-label="Saku ポートフォリオ トップ">
+  <img class="hero-v18-banner" src="asset-02.webp" alt="情報を整理し、伝わる形に。SNS運用支援・コンテンツ制作 Saku">
+  <a class="hero-v18-hotspot works" href="#works" aria-label="Worksを見る"><span>Worksを見る</span><b>→</b></a>
+  <a class="hero-v18-hotspot contact-hit inquiry-open" href="#contact" aria-label="お問い合わせ"><span>お問い合わせ</span><b>→</b></a>
+</section>
+<section class="section about" id="about"><div class="wrap"><h2 class="section-title">About <span class="sub">わたしについて</span></h2><div class="about-grid"><div class="profile-frame"><img src="asset-03.webp" alt="Saku profile"></div><div><h2>金融業界11年の経験を活かし、<br>SNS運用と業務整理で事業を支えます。</h2><p>金融業界で11年間、事務・営業の両面からお客様対応に従事してきました。ヒアリング力や課題整理力を強みとし、相手の意図を汲み取りながら必要な情報を整理します。現在はXを中心としたSNS運用支援・投稿制作に加え、業務フロー整理やマニュアル作成など、仕組みづくりのサポートを行っています。</p></div><div class="quick"><div>✿ Saku</div><div>▣ 金融業界11年（事務・営業）</div><div>↗ SNS運用支援・投稿制作</div><div>▤ 業務整理・マニュアル作成</div><div>♡ 丁寧・正確・継続する力</div></div></div></div></section>
+<section class="strengths"><div class="wrap strength-grid"><div class="strength-head"><h2>Strengths</h2><p>わたしの強み</p></div><div class="strength"><span class="num">01</span><b>整理し、分かりやすい形にする力</b><p>情報や課題を整理し、相手が理解<br>しやすく次の行動に移りやすい形に整えます。</p></div><div class="strength"><span class="num">02</span><b>仕組みに落とし込み、改善する力</b><p>マニュアル化やチェック体制の整備など、再現性のある運用を意識します。</p></div><div class="strength"><span class="num">03</span><b>調べ、試し、改善を重ねる力</b><p>必要な情報を調べ、実際に試しながら数値をもとに改善します。</p></div></div></section>
+<section class="section" id="services"><img class="decor-flower-left" src="asset-04.webp" alt=""><div class="wrap"><h2 class="section-title">Services <span class="sub">対応可能な業務</span></h2><div class="services-grid"><div class="service"><div class="service-top"></div><div class="service-body"><h3>01 SNS運用支援</h3><p>リサーチ / 分析<span class="service-paren">（市場・競合・ターゲット）</span><br>アカウント設計 / 投稿設計<br>構成・文章作成・デザイン<br>DM / フォロー等の運用サポート<br>簡易分析 / 改善提案</p></div></div><div class="service"><div class="service-top"></div><div class="service-body"><h3>02 SNSコンテンツ制作</h3><p>Instagramフィード投稿デザイン<br>Instagramサムネイル制作<br>X投稿デザイン / 図解投稿<br>バナー / チラシ / 名刺等<br>動画編集（CapCut）</p></div></div><div class="service"><div class="service-top"></div><div class="service-body"><h3>03 資料・業務サポート</h3><p>営業資料 / 提案資料 / セミナー資料<br>データ入力 / 管理<br>業務フロー整理 / マニュアル作成<br>チェック体制構築 / タスク管理<br>顧客対応</p></div></div></div></div></section>
+<section class="result"><div class="wrap result-grid"><div><small>SNS OPERATION RESULT</small><h2>運用支援の実績</h2><p>AI副業ジャンルのX運用支援</p></div><div class="metric"><b>30</b><span>運用日数</span></div><div class="metric"><b>117</b><span>DM送付</span></div><div class="metric"><b>11</b><span>登録</span></div><div class="metric"><b>9.4%</b><span>登録率</span></div></div></section>
+<section class="section works" id="works"><img class="decor-flower-right" src="asset-05.webp" alt=""><div class="wrap"><h2 class="section-title">Works <span class="sub">制作実績</span></h2><div class="works-grid">
+<article class="work-card" data-i="0" tabindex="0" role="button"><div class="work-thumb"><img src="asset-06.webp" alt="ガジェット紹介"></div><div class="work-copy"><small>Instagram / Feed</small><h3>フリーランス男性向けガジェット紹介</h3><p>クリックして制作デザインを確認 →</p></div></article>
+<article class="work-card" data-i="1" tabindex="0" role="button"><div class="work-thumb"><img src="asset-07.webp" alt="ファン化を促すフィード投稿"></div><div class="work-copy"><small>Instagram / Feed</small><h3>ファン化を促すフィード投稿</h3><p>クリックして制作デザインを確認 →</p></div></article>
+<article class="work-card" data-i="2" tabindex="0" role="button"><div class="work-thumb"><img src="asset-08.webp" alt="AIソリューション営業資料"></div><div class="work-copy"><small>Slide Design</small><h3>AIソリューション営業資料</h3><p>クリックして制作デザインを確認 →</p></div></article>
+<article class="work-card" data-i="3" tabindex="0" role="button"><div class="work-thumb"><img src="asset-09.webp" alt="美容サロン広告バナー"></div><div class="work-copy"><small>Banner</small><h3>美容サロン広告バナー</h3><p>クリックして制作デザインを確認 →</p></div></article>
+<article class="work-card" data-i="4" tabindex="0" role="button"><div class="work-thumb"><img src="asset-10.webp" alt="在宅仕事サムネイル制作"></div><div class="work-copy"><small>Instagram / Thumbnail</small><h3>在宅仕事サムネイル</h3><p>クリックして制作デザインを確認 →</p></div></article>
+</div></div></section>
+<section class="mind" id="mind"><small>WORK MINDSETS</small><h2>伝わる形に、整理する。</h2><p><span class="mind-line">デザインやSNS運用、バックオフィス業務など、どの仕事においても大切にしているのは、</span><span class="mind-line">情報や目的を整理し、相手にとって分かりやすい形に整えることです。</span><span class="mind-line">制作では「誰に・何を・どのように伝えるのか」を考え、</span><span class="mind-line">見る人が理解しやすく、次の行動につながるよう情報の順序や見せ方を設計します。</span><span class="mind-line">また、業務では一度きりの対応で終わらせず、</span><span class="mind-line">次回以降も進めやすい形に整理することを意識しています。</span></p></section>
+<section class="contact" id="contact"><div class="wrap"><div><h2><span>Contact</span>　ご相談・ご依頼</h2><p>SNS運用支援、投稿制作、資料制作、業務整理など、<br>お気軽にご相談ください。</p><div class="contact-actions"><a class="btn primary inquiry-open" href="#">お問い合わせ →</a></div></div><div class="contact-links"><a href="mailto:t0i3.t02u.1maga.4@gmail.com">✉ t0i3.t02u.1maga.4@gmail.com</a><a href="https://x.com/SakuSNSDesigner" target="_blank" rel="noopener">X @SakuSNSDesigner</a></div></div></section>
+<div class="inquiry-modal" id="inquiryModal"><div class="inquiry-box"><button class="inquiry-close" type="button" aria-label="閉じる">×</button><h2>お問い合わせ</h2><form action="https://formsubmit.co/t0i3.t02u.1maga.4@gmail.com" method="POST"><input type="hidden" name="_subject" value="ポートフォリオHPからのお問い合わせ"><input type="hidden" name="_captcha" value="false"><label>お名前</label><input name="お名前" required><label>メールアドレス</label><input name="email" type="email" required><label>ご相談内容</label><input name="ご相談内容" placeholder="例：SNS運用支援について"><label>メッセージ</label><textarea name="メッセージ" required></textarea><button class="btn primary inquiry-submit" type="submit">送信する →</button><p class="form-note">必要事項をご入力のうえ、送信してください。</p></form></div></div>
+<div class="modal" id="modal"><div class="modalbox"><button class="close">×</button><h2 id="mt"></h2><div id="mi"></div></div></div>
+<script>
+const galleries=[
+{title:'フリーランス男性向けガジェット紹介',type:'feed',items:['asset-06.webp','asset-11.webp','asset-12.webp','asset-13.webp','asset-14.webp','asset-15.webp','asset-16.webp','asset-17.webp','asset-18.webp','asset-19.webp']},
+{title:'ファン化を促すフィード投稿',type:'feed',items:['asset-07.webp','asset-20.webp','asset-21.webp','asset-22.webp','asset-23.webp','asset-24.webp','asset-25.webp']},
+{title:'AIソリューション営業資料',type:'feed',items:['asset-08.webp','asset-26.webp','asset-27.webp','asset-28.webp','asset-29.webp','asset-30.webp']},
+{title:'美容サロン広告バナー',type:'single',items:['asset-31.webp']},
+{title:'在宅仕事サムネイル',type:'feed',items:['asset-10.webp','asset-32.webp']}
+];
+
+// v12 requested slide order: old #7 -> #4, new supplied slide -> #7
+if(galleries[1] && galleries[1].items.length>=7){
+  const old7=galleries[1].items[6];
+  galleries[1].items[3]=old7;
+  galleries[1].items[6]='asset-33.webp';
+}
+const cards=[...document.querySelectorAll('.work-card')],modal=document.getElementById('modal'),mi=document.getElementById('mi'),mt=document.getElementById('mt');
+function enableDragScroll(el){let down=false,startX=0,startLeft=0,pid=null;el.addEventListener('pointerdown',e=>{if(e.button!==0)return;down=true;pid=e.pointerId;startX=e.clientX;startLeft=el.scrollLeft;el.classList.add('dragging');try{el.setPointerCapture(pid)}catch(_){};e.preventDefault()});el.addEventListener('pointermove',e=>{if(!down)return;el.scrollLeft=startLeft-(e.clientX-startX);e.preventDefault()});const end=()=>{down=false;el.classList.remove('dragging');pid=null};el.addEventListener('pointerup',end);el.addEventListener('pointercancel',end);el.addEventListener('wheel',e=>{if(Math.abs(e.deltaY)>=Math.abs(e.deltaX)){el.scrollLeft+=e.deltaY;e.preventDefault()}},{passive:false});}
+function openGallery(i){const g=galleries[i];mt.textContent=g.title;mi.innerHTML='';const count=document.createElement('div');count.className='gallery-count';count.textContent=g.items.length>1?`全 ${g.items.length} 枚`:'1枚';mi.appendChild(count);const wrap=document.createElement('div');wrap.className='gallery '+g.type+(g.items.length<=2?' center-short':'');g.items.forEach((src,idx)=>{const img=document.createElement('img');img.src=src;img.alt=`${g.title} ${idx+1}`;img.loading='lazy';wrap.appendChild(img)});mi.appendChild(wrap);enableDragScroll(wrap);modal.classList.add('open');document.body.style.overflow='hidden'}
+cards.forEach(c=>{const i=Number(c.dataset.i);c.onclick=()=>openGallery(i);c.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openGallery(i)}}});
+function closeModal(){modal.classList.remove('open');document.body.style.overflow=''}
+document.querySelector('#modal .close').onclick=closeModal;modal.onclick=e=>{if(e.target===modal)closeModal()};document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+</script>
+
+<script>const iq=document.getElementById('inquiryModal');document.querySelectorAll('.inquiry-open').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();iq.classList.add('open');document.body.style.overflow='hidden'}));document.querySelector('.inquiry-close').onclick=()=>{iq.classList.remove('open');document.body.style.overflow=''};iq.addEventListener('click',e=>{if(e.target===iq){iq.classList.remove('open');document.body.style.overflow=''}});</script><script id="v11-decor">
+(()=>{
+ const pink='asset-34.webp', teal='asset-35.webp';
+ const specs=[['#about','pink',pink],['.strengths','teal',teal],['#services','pink',pink],['.works','pink',pink],['#mind','teal',teal],['#contact','pink',pink]];
+ specs.forEach(([sel,kind,src])=>{const el=document.querySelector(sel);if(el){const im=document.createElement('img');im.className='site-flower '+kind;im.src=src;im.alt='';el.appendChild(im);}});
+})();
+</script>
+<script id="v12-edge-flowers">(()=>{const teal='asset-36.webp',pink='asset-37.webp';[].forEach(([sel,k,src])=>{const e=document.querySelector(sel);if(e){const i=document.createElement('img');i.className='edge-flower '+k;i.src=src;i.alt='';e.appendChild(i)}})})();</script>
+
+<script id="v21-hero-live">
+(()=>{const hero=document.querySelector('.hero-v18');if(!hero)return;const copy=document.createElement('div');copy.className='hero-live-copy';copy.innerHTML=`<div class="eyebrow">SNS OPERATION SUPPORT<br>/ CONTENT DESIGN</div><h1>情報を整理し、<br>伝わる形に。</h1><p>SNS運用支援から投稿設計・コンテンツ制作まで。<br>「誰に・何を・どう伝えるか」を整理し、<br>次の行動につながる発信を支えます。</p><svg class="hero-lineflower" viewBox="0 0 180 360" aria-hidden="true"><g fill="none" stroke="#d9c3cd" stroke-width="2"><path d="M8 350C42 305 56 250 67 195C78 140 94 78 135 20"/><path d="M66 200C37 190 18 166 18 137C48 138 68 162 66 200Z"/><path d="M77 158C101 127 130 117 158 126C145 153 117 166 77 158Z"/><path d="M48 260C25 258 9 243 5 222C28 215 47 232 48 260Z"/><path d="M53 242C80 231 104 238 119 258C97 274 72 266 53 242Z"/><path d="M132 22C118 8 124 -4 140 3C154 10 154 23 136 31C154 26 164 38 154 50C143 61 131 52 134 32C127 51 111 53 105 40C99 27 110 17 132 22Z"/></g></svg>`;hero.appendChild(copy);const badge=document.createElement('div');badge.className='hero-live-badge';badge.innerHTML='SNS運用<br>デザイン制作<br>業務サポート<br>で<br>ビジネスの成長を<br>サポートします';hero.appendChild(badge);})();
+</script>
+
+<script id="v22-structure-fixes">
+(()=>{
+ const hero=document.querySelector('.hero-v18');
+ if(hero && !hero.querySelector('.hero-v22-copy')){
+   const copy=document.createElement('div');copy.className='hero-v22-copy';
+   copy.innerHTML=`<div class="eyebrow">SNS OPERATION SUPPORT<br>/ CONTENT DESIGN</div><h1>情報を整理し、<br>伝わる形に。</h1><p>SNS運用支援から投稿設計・コンテンツ制作まで。<br>「誰に・何を・どう伝えるか」を整理し、<br>次の行動につながる発信を支えます。</p><svg class="hero-v22-flower" viewBox="0 0 180 360" aria-hidden="true"><g fill="none" stroke="#d9c3cd" stroke-width="2"><path d="M8 350C42 305 56 250 67 195C78 140 94 78 135 20"/><path d="M66 200C37 190 18 166 18 137C48 138 68 162 66 200Z"/><path d="M77 158C101 127 130 117 158 126C145 153 117 166 77 158Z"/><path d="M48 260C25 258 9 243 5 222C28 215 47 232 48 260Z"/><path d="M53 242C80 231 104 238 119 258C97 274 72 266 53 242Z"/><path d="M132 22C118 8 124 -4 140 3C154 10 154 23 136 31C154 26 164 38 154 50C143 61 131 52 134 32C127 51 111 53 105 40C99 27 110 17 132 22Z"/></g></svg>`;
+   const photo=document.createElement('div');photo.className='hero-v22-photo';
+   photo.innerHTML=`<div class="hero-v22-sign">Saku</div><div class="hero-v22-badge">SNS運用<br>デザイン制作<br>業務サポート<br>で<br>ビジネスの成長を<br>サポートします</div>`;
+   hero.append(copy,photo);
+ }
+ const contact=document.querySelector('.contact .wrap > div:first-child');
+ if(contact && !contact.querySelector('.contact-title-v22')){
+   const title=document.createElement('div');title.className='contact-title-v22';title.innerHTML='<span class="en">Contact</span><span class="jp">ーご相談・ご依頼ー</span>';
+   contact.insertBefore(title,contact.firstChild);
+ }
+})();
+</script>
+<style id="v23-user-fixes">
+/* Exact requested pink sampled from the user's reference swatch (approx. RGB 194,135,160). */
+:root{--pink:#c287a0!important;--teal:#426d78!important}
+
+/* Pink areas use the reference dusty rose; text on those areas is white. */
+.service-top{background:#c287a0!important}
+.service-top::after{color:#fff!important;opacity:1!important}
+.logo span{color:#c287a0!important}
+.contact-btn{background:#c287a0!important;color:#fff!important}
+.num{background:#c287a0!important;color:#fff!important}
+
+/* Services: move both title and body one Japanese character inward from the current position. */
+.service-body{padding-left:2em!important;padding-right:1.35em!important}
+.service-body h3{margin:0 0 1em!important;padding:0!important;text-align:left!important;white-space:nowrap!important}
+.service-body p{margin:0!important;padding:0!important;text-align:left!important}
+
+/* Strengths: do not allow the 01 title to wrap at desktop/browser sizes like the user's screenshot. */
+.strength b{white-space:nowrap!important;font-size:clamp(15px,1.25vw,20px)!important;letter-spacing:0!important}
+.strength b br{display:none!important}
+.strength-indent{display:inline!important;padding-left:0!important}
+
+/* Restore the original hero design instead of rebuilding/reinterpreting it. */
+.hero-v18{display:block!important;min-height:0!important;background:#fff!important;position:relative!important;overflow:hidden!important}
+.hero-v18-banner{display:block!important;width:100%!important;height:auto!important;position:relative!important;z-index:1!important}
+.hero-v22-copy,.hero-v22-photo,.hero-live-copy,.hero-live-badge{display:none!important}
+.hero-hotspot{display:block!important;z-index:5!important;background:transparent!important;box-shadow:none!important;border:0!important}
+
+@media(max-width:1100px){
+ .strength b{font-size:15px!important}
+}
+@media(max-width:800px){
+ .strength b{white-space:normal!important}
+ .hero-v18-banner{display:block!important}
+}
+</style>
+
+<style id="v25-exact-fixes">
+:root{--pink-contact:#bb87a3;--pink-service:#f5e4ec;--pink-service-text:#d79ab7}
+/* HERO: preserve supplied banner exactly. No reconstruction. */
+.hero-v18{display:block!important;position:relative!important;width:100%!important;min-height:0!important;background:#fff!important;overflow:hidden!important;margin:0!important;padding:0!important}
+.hero-v18-banner{display:block!important;width:100%!important;height:auto!important;object-fit:contain!important;image-rendering:auto!important}
+.hero-v18-hotspot{position:absolute!important;display:block!important;z-index:9!important;background:transparent!important;border:0!important;border-radius:999px!important;box-shadow:none!important;cursor:pointer!important}
+.hero-v18-hotspot.works{left:10.1%!important;bottom:4.6%!important;width:18.3%!important;height:13.7%!important}
+.hero-v18-hotspot.contact-hit{left:29.1%!important;bottom:4.6%!important;width:15.2%!important;height:13.7%!important}
+.hero-v18-hotspot:hover{background:rgba(255,255,255,.07)!important}
+
+/* STRENGTHS: pull content left and control line breaks naturally. */
+.strengths .strength-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:24px!important}
+.strengths .strength-head{grid-column:1/-1!important}
+.strength{display:grid!important;grid-template-columns:58px minmax(0,1fr)!important;grid-template-rows:auto auto!important;column-gap:16px!important;row-gap:0!important;padding:24px 22px 26px!important;align-content:start!important}
+.strength .num{grid-column:1!important;grid-row:1!important;width:48px!important;height:48px!important;margin:0!important;align-self:center!important;justify-self:start!important}
+.strength b{grid-column:2!important;grid-row:1!important;align-self:center!important;justify-self:start!important;text-align:left!important;margin:0!important;padding:0!important;width:100%!important;white-space:nowrap!important;font-size:clamp(15px,1.08vw,19px)!important;line-height:1.5!important}
+.strength p{grid-column:1/-1!important;grid-row:2!important;margin:24px 0 0!important;padding:0!important;text-align:left!important;line-height:1.9!important;font-size:clamp(13px,.95vw,16px)!important;word-break:normal!important;overflow-wrap:normal!important;line-break:strict!important}
+
+/* SERVICES: restore the original pale pink header, not the dark rose. */
+.service-top{background:var(--pink-service)!important}
+.service-top::after{color:var(--pink-service-text)!important;opacity:1!important}
+.service-body{padding-left:30px!important;padding-right:24px!important}
+
+/* CONTACT: exact requested rose #bb87a3, white copy; teal circle/CTA; absolutely no shadow. */
+.contact{background:#bb87a3!important;color:#fff!important}
+.contact .contact-title-v22,.contact .contact-title-v22 .en,.contact .contact-title-v22 .jp,.contact p,.contact a,.contact-links a{color:#fff!important}
+.contact:after{background:var(--teal)!important}
+.contact .contact-actions .btn,.contact .inquiry-open{background:var(--teal)!important;color:#fff!important;border-color:var(--teal)!important;box-shadow:none!important;filter:none!important}
+.contact .contact-actions .btn:hover,.contact .inquiry-open:hover{box-shadow:none!important;filter:none!important;transform:translateY(-1px)!important}
+.contact-links a{font-size:clamp(19px,1.35vw,24px)!important}
+
+/* Varied botanical bundles: restrained and non-repeating. */
+.edge-flower,.site-flower,.decor-flower-left,.decor-flower-right{display:none!important}
+.strengths::after{content:""!important;position:absolute!important;right:-34px!important;bottom:-42px!important;width:210px!important;height:230px!important;background-repeat:no-repeat!important;background-size:contain!important;opacity:.38!important;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 260'%3E%3Cg fill='none' stroke='%23e8d3dc' stroke-width='2'%3E%3Cpath d='M28 258C66 211 92 164 105 112C115 70 136 39 172 18'/%3E%3Cpath d='M88 169C59 158 43 136 45 112C73 113 91 135 88 169ZM102 130C132 108 160 106 183 121C164 146 134 149 102 130ZM118 84C98 66 94 46 105 29C127 42 132 62 118 84Z'/%3E%3Cpath d='M70 213C45 207 31 190 32 170C57 168 72 187 70 213Z'/%3E%3C/g%3E%3C/svg%3E")!important}
+#services::after{content:""!important;position:absolute!important;left:-28px!important;bottom:-48px!important;width:210px!important;height:225px!important;background-repeat:no-repeat!important;background-size:contain!important;opacity:.30!important;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 250 250'%3E%3Cg fill='none' stroke='%23d7a4ba' stroke-width='2'%3E%3Cpath d='M15 244C54 205 76 164 87 118M87 118C96 75 119 45 153 25M71 170C43 165 27 147 28 124C55 121 73 143 71 170ZM86 142C112 121 139 116 163 129C146 153 117 157 86 142Z'/%3E%3Cpath d='M105 239C132 209 151 177 164 143M164 143C178 107 202 84 232 75M143 185C121 177 109 159 112 141C135 142 149 160 143 185ZM166 145C190 129 214 130 232 145C214 164 190 164 166 145Z'/%3E%3C/g%3E%3C/svg%3E")!important}
+.contact::before{content:""!important;position:absolute!important;left:-34px!important;bottom:-50px!important;width:235px!important;height:225px!important;background-repeat:no-repeat!important;background-size:contain!important;opacity:.24!important;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 270 240'%3E%3Cg fill='none' stroke='%23ffffff' stroke-width='2'%3E%3Cpath d='M14 235C60 196 86 151 103 101M103 101C116 63 142 37 177 24M79 158C49 151 31 130 33 106C62 106 81 130 79 158ZM100 125C128 105 156 104 179 119C160 143 130 145 100 125Z'/%3E%3Cpath d='M119 233C151 202 174 171 194 137M194 137C211 109 231 91 255 84M169 176C147 168 135 151 138 133C160 134 175 151 169 176Z'/%3E%3C/g%3E%3C/svg%3E")!important}
+@media(max-width:1200px){.strength{grid-template-columns:52px minmax(0,1fr)!important;padding:22px 18px 24px!important;column-gap:12px!important}.strength b{font-size:14px!important}}
+@media(max-width:800px){.strengths .strength-grid{grid-template-columns:1fr!important}.strength b{white-space:normal!important;font-size:16px!important}}
+</style>
+
+
+<style id="v27-user-corrections">
+/* HERO — keep the supplied banner itself unchanged. Only the two baked-in button areas are
+   covered by crisp, single-layer clickable buttons so no double border remains. */
+.hero-v18-banner{filter:contrast(1.025) saturate(1.01)!important;image-rendering:auto!important}
+.hero-v18-hotspot{
+  display:flex!important;align-items:center!important;justify-content:center!important;
+  background:#c287a0!important;color:#fff!important;border:0!important;outline:0!important;
+  box-shadow:0 5px 0 rgba(48,65,69,.22)!important;
+  font-family:"Noto Serif JP","Yu Mincho",serif!important;font-weight:700!important;
+  font-size:clamp(16px,1.45vw,25px)!important;letter-spacing:.02em!important;
+  text-decoration:none!important;line-height:1!important;transition:transform .15s ease,box-shadow .15s ease!important;
+}
+.hero-v18-hotspot.works{left:10.25%!important;bottom:4.8%!important;width:18.05%!important;height:12.8%!important}
+.hero-v18-hotspot.contact-hit{left:29.45%!important;bottom:4.8%!important;width:14.75%!important;height:12.8%!important}
+.hero-v18-hotspot.works::before{content:"Worksを見る　→"!important}
+.hero-v18-hotspot.contact-hit::before{content:"お問い合わせ　→"!important}
+.hero-v18-hotspot:hover{background:#c287a0!important;transform:translateY(-2px)!important;box-shadow:0 7px 0 rgba(48,65,69,.22)!important}
+.hero-v18-hotspot:active{transform:translateY(2px)!important;box-shadow:0 2px 0 rgba(48,65,69,.22)!important}
+
+/* CONTACT — match the About reference: white background + #b46f8d rose typography. */
+.contact{background:#fff!important;color:#b46f8d!important;padding:38px 0 40px!important;min-height:0!important}
+.contact .wrap{grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;gap:54px!important;align-items:start!important}
+.contact .contact-title-v22,
+.contact .contact-title-v22 .en,
+.contact .contact-title-v22 .jp,
+.contact p,.contact a,.contact-links a{color:#b46f8d!important}
+.contact .contact-title-v22{margin:0 0 22px!important}
+.contact .contact-title-v22 .en{line-height:1!important;margin:0!important}
+.contact .contact-title-v22 .jp{margin-top:8px!important;line-height:1.25!important}
+.contact .wrap>div:first-child>p{margin:0!important;line-height:1.9!important;color:#b46f8d!important}
+.contact .wrap>div:first-child>p + p{margin-top:3px!important}
+.contact-links{padding:92px 0 0!important;margin:0!important;align-self:start!important;gap:12px!important}
+.contact-links a{font-size:clamp(18px,1.3vw,23px)!important;margin:0 0 14px!important;line-height:1.4!important}
+.contact:after{width:300px!important;height:300px!important;right:-78px!important;top:-120px!important;background:#426d78!important}
+.contact::before{width:190px!important;height:170px!important;left:-28px!important;bottom:-48px!important;opacity:.18!important;stroke:none!important}
+.contact .btn.primary,.contact .inquiry-open,.contact .contact-actions .btn{
+  background:#426d78!important;color:#fff!important;border:0!important;box-shadow:none!important;filter:none!important;
+}
+.contact .btn.primary:hover,.contact .inquiry-open:hover,.contact .contact-actions .btn:hover{box-shadow:none!important;transform:none!important}
+
+@media(max-width:800px){
+ .hero-v18-hotspot{font-size:13px!important;box-shadow:0 3px 0 rgba(48,65,69,.22)!important}
+ .contact .wrap{grid-template-columns:1fr!important;gap:20px!important}
+ .contact-links{padding:0!important}
+ .contact:after{width:190px!important;height:190px!important;right:-90px!important;top:-85px!important}
+}
+</style>
+
+
+<style id="v28-all-requested-fixes">
+/* 1) HERO: no image/design changes. Fully cover the two baked-in button areas with one crisp live button each. */
+.hero-v18-banner{filter:none!important;image-rendering:auto!important}
+.hero-v18-hotspot{
+  box-sizing:border-box!important;
+  background:#c287a0!important;color:#fff!important;
+  border:2px solid rgba(255,255,255,.70)!important;
+  border-radius:999px!important;
+  box-shadow:0 5px 0 rgba(48,65,69,.22)!important;
+  text-rendering:geometricPrecision!important;-webkit-font-smoothing:antialiased!important;
+  font-family:Georgia,"Yu Mincho","Hiragino Mincho ProN",serif!important;
+  font-weight:700!important;letter-spacing:.01em!important;
+}
+/* slightly enlarge/shift left so none of the original button peeks out */
+.hero-v18-hotspot.works{left:10.12%!important;bottom:4.45%!important;width:18.35%!important;height:13.55%!important}
+.hero-v18-hotspot.contact-hit{left:29.22%!important;bottom:4.45%!important;width:15.15%!important;height:13.55%!important}
+.hero-v18-hotspot.works::before{content:"Worksを見る　→"!important}
+.hero-v18-hotspot.contact-hit::before{content:"お問い合わせ　→"!important}
+
+/* 2) STRENGTHS: a little taller; body begins under the 01/02/03 area; avoid ugly Japanese breaks. */
+.strengths{padding:46px 0!important}
+.strength{min-height:300px!important;grid-template-columns:58px minmax(0,1fr)!important;column-gap:14px!important;padding:30px 30px 34px!important}
+.strength .num{width:48px!important;height:48px!important}
+.strength b{white-space:nowrap!important;word-break:keep-all!important;overflow-wrap:normal!important;line-break:strict!important}
+.strength p{
+  grid-column:1/-1!important;
+  margin:36px 0 0!important;
+  padding:0!important;
+  max-width:100%!important;
+  word-break:normal!important;overflow-wrap:normal!important;line-break:strict!important;
+  line-height:2.05!important;
+}
+/* keep the body start visually aligned with the number, not pushed toward the right */
+.strength p br{display:none!important}
+
+/* 3) SERVICES: add one more character of left breathing room to 01–03 and all copy below. */
+.service-body{padding-left:3em!important;padding-right:2em!important}
+.service-body h3{margin:0 0 1.15em!important;padding:0!important}
+.service-body p{margin:0!important;padding:0!important}
+
+/* 4) CONTACT: more space before CTA; larger mail/X links. */
+.contact .wrap>div:first-child>p{margin-bottom:0!important}
+.contact .contact-actions{margin-top:34px!important}
+.contact-links a{font-size:clamp(21px,1.55vw,27px)!important;line-height:1.45!important}
+
+@media(max-width:1200px){
+ .strength{min-height:285px!important;padding:28px 24px 32px!important}
+ .strength b{font-size:14px!important}
+ .strength p{font-size:13px!important;margin-top:32px!important}
+}
+@media(max-width:800px){
+ .strength{min-height:0!important}.strength b{white-space:normal!important}
+ .service-body{padding-left:2em!important;padding-right:1.5em!important}
+ .contact .contact-actions{margin-top:28px!important}
+}
+</style>
+
+<style id="v29-requested-fixes">
+.strengths{padding:40px 0!important}.strength{min-height:286px!important;padding:28px 30px 30px!important;grid-template-columns:58px minmax(0,1fr)!important;column-gap:8px!important}.strength .num{width:50px!important;height:50px!important;font-size:18px!important}.strength b{font-size:clamp(17px,1.18vw,21px)!important;line-height:1.5!important;padding-left:0!important}.strength p{font-size:clamp(15px,1.02vw,18px)!important;line-height:2!important;margin-top:30px!important}
+.service-body{padding:38px 2em!important;min-height:342px!important;display:flex!important;flex-direction:column!important;justify-content:flex-start!important}.service-body h3{margin:0 0 1.35em!important;padding:0!important}.service-body p{margin:0!important;padding:0!important}
+.contact .wrap>div:first-child>p{font-size:clamp(17px,1.15vw,20px)!important;line-height:1.9!important}.contact .wrap>div:first-child>p + p{margin-top:5px!important}
+.hero-v18-banner{width:100%!important;height:auto!important;filter:contrast(1.045) saturate(1.005)!important;image-rendering:auto!important}.hero-v18-hotspot{font-size:clamp(16px,1.28vw,23px)!important;border:2px solid rgba(255,255,255,.72)!important;box-shadow:0 4px 0 rgba(48,65,69,.22)!important}.hero-v18-hotspot.works{left:10.25%!important;bottom:4.7%!important;width:18.0%!important;height:12.45%!important}.hero-v18-hotspot.contact-hit{left:29.42%!important;bottom:4.7%!important;width:14.72%!important;height:12.45%!important}
+@media(max-width:1200px){.strength{min-height:270px!important;padding:25px 24px 28px!important;grid-template-columns:54px minmax(0,1fr)!important;column-gap:7px!important}.strength b{font-size:16px!important}.strength p{font-size:14px!important;margin-top:26px!important}.service-body{min-height:320px!important}}@media(max-width:800px){.strength{min-height:0!important}.strength b{font-size:16px!important}.service-body{min-height:0!important;padding:30px 2em!important}}
+</style>
+<style id="v30-user-fixes">
+/* HERO: source artwork is unchanged except baked-in button graphics removed and source upscaled/sharpened. One live button layer only. */
+.hero-v18-banner{filter:none!important;image-rendering:auto!important;width:100%!important;height:auto!important}
+.hero-v18-hotspot{
+ display:flex!important;align-items:center!important;justify-content:center!important;
+ background:#c287a0!important;color:#fff!important;border:2px solid rgba(255,255,255,.72)!important;
+ border-radius:999px!important;box-shadow:0 4px 0 rgba(48,65,69,.22)!important;
+ font-family:Georgia,"Yu Mincho","Hiragino Mincho ProN",serif!important;font-weight:700!important;
+ font-size:clamp(15px,1.20vw,22px)!important;text-rendering:geometricPrecision!important;-webkit-font-smoothing:antialiased!important;
+}
+.hero-v18-hotspot.works{left:10.25%!important;bottom:4.7%!important;width:18.0%!important;height:12.45%!important}
+.hero-v18-hotspot.contact-hit{left:29.42%!important;bottom:4.7%!important;width:14.72%!important;height:12.45%!important}
+
+/* ALL major section titles: one consistent visual size. */
+.section-title,.strength-head h2,.contact-title-v22 .en{font-family:Georgia,serif!important;font-size:clamp(40px,3.15vw,52px)!important;line-height:1!important;font-weight:700!important}
+.section-title .sub,.strength-head p,.contact-title-v22 .jp{font-family:"Yu Mincho","Hiragino Mincho ProN",serif!important;font-size:clamp(15px,1.05vw,18px)!important;font-weight:400!important}
+
+/* STRENGTHS: larger type, tighter number/title gap, responsive natural Japanese wrapping. */
+.strengths{padding:42px 0 46px!important}
+.strength{min-height:300px!important;padding:30px 30px 32px!important;grid-template-columns:54px minmax(0,1fr)!important;column-gap:6px!important}
+.strength .num{width:50px!important;height:50px!important;font-size:19px!important}
+.strength b{font-size:clamp(18px,1.32vw,23px)!important;line-height:1.55!important;white-space:nowrap!important;word-break:keep-all!important;overflow-wrap:normal!important}
+.strength p{font-size:clamp(16px,1.08vw,19px)!important;line-height:1.95!important;margin-top:31px!important;word-break:normal!important;line-break:strict!important}
+@media(max-width:1500px){.strength b{white-space:normal!important;word-break:keep-all!important}.strength{grid-template-columns:52px minmax(0,1fr)!important}}
+@media(max-width:1100px){.strengths .strength-grid{grid-template-columns:1fr!important}.strength{min-height:0!important}.strength b{font-size:19px!important}.strength p{font-size:16px!important}}
+
+/* SERVICES: shift every requested line one character left and remove excessive bottom whitespace. */
+.service-body{padding:30px 1em 28px!important;min-height:0!important;display:block!important}
+.service-body h3{margin:0 0 1.25em!important;padding:0!important;font-size:clamp(18px,1.2vw,21px)!important}
+.service-body p{margin:0!important;padding:0!important;font-size:clamp(15px,1vw,18px)!important;line-height:1.9!important}
+.service-card{height:auto!important;min-height:0!important}
+.services-grid{align-items:stretch!important}
+
+/* CONTACT: keep current layout, reduce link size, remove X trailing arrow. */
+.contact-links a{font-size:clamp(18px,1.18vw,22px)!important;line-height:1.45!important}
+</style>
+
+<style id="v31-user-fixes">
+/* 1. Strengths: use the exact layout balance shown in the user's supplied reference. */
+.strengths{padding:44px 0 42px!important}
+.strengths .wrap{max-width:1240px!important;padding:0 42px!important}
+.strengths .section-title,.strength-head h2{font-size:clamp(40px,3.15vw,52px)!important}
+.strengths .strength-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:22px!important}
+.strength{min-height:354px!important;padding:38px 34px 36px!important;display:grid!important;grid-template-columns:58px minmax(0,1fr)!important;grid-template-rows:auto 1fr!important;column-gap:20px!important;align-items:start!important}
+.strength .num{width:52px!important;height:52px!important;font-size:18px!important;margin:0!important}
+.strength b{font-size:clamp(18px,1.18vw,21px)!important;line-height:1.55!important;white-space:normal!important;word-break:keep-all!important}
+.strength p{grid-column:1 / -1!important;font-size:clamp(16px,1.02vw,18px)!important;line-height:2.15!important;margin:48px 0 0!important}
+@media(max-width:1100px){.strengths .strength-grid{grid-template-columns:1fr!important}.strength{min-height:0!important}}
+
+/* 2. Work mindsets: preserve layout and raise all typography by roughly 2px. */
+.mind small{font-size:17px!important}
+.mind h2{font-size:30px!important;line-height:1.55!important}
+.mind p{font-size:17px!important;line-height:2.2!important}
+
+/* 5. Services: shift content about two characters right. Body begins at the visual midpoint between the two number digits. */
+.service-body{padding:30px 1.35em 30px 3.25em!important}
+.service-body h3{font-size:clamp(18px,1.2vw,21px)!important;margin:0 0 1.25em!important}
+.service-body p{font-size:clamp(15px,1vw,18px)!important;line-height:1.9!important;margin-left:.48em!important}
+
+/* 4. Hero: retain supplied artwork, no blur/filter. Live buttons use the same pill treatment as the supplied Contact button, keeping hero pink. */
+.hero-v18-banner{filter:none!important;image-rendering:auto!important}
+.hero-v18-hotspot{background:#c287a0!important;color:#fff!important;border:0!important;border-radius:999px!important;box-shadow:none!important;font-family:"Yu Mincho","Hiragino Mincho ProN",Georgia,serif!important;font-weight:700!important;font-size:clamp(15px,1.15vw,21px)!important;display:flex!important;align-items:center!important;justify-content:center!important;text-rendering:geometricPrecision!important;-webkit-font-smoothing:antialiased!important}
+.hero-v18-hotspot.works{left:10.25%!important;bottom:4.7%!important;width:18.0%!important;height:12.45%!important}
+.hero-v18-hotspot.contact-hit{left:29.42%!important;bottom:4.7%!important;width:14.72%!important;height:12.45%!important}
+.hero-v18-hotspot:hover{background:#c287a0!important;transform:none!important;box-shadow:none!important}
+.hero-v18-hotspot.works::before{content:"Worksを見る　→"!important}
+.hero-v18-hotspot.contact-hit::before{content:"お問い合わせ　→"!important}
+</style>
+
+<style id="v32-user-fixes">
+/* 1-2. Hero: do not place any visual layer over the supplied artwork.
+   The original raster artwork remains untouched; links are transparent click areas only. */
+.hero-v18-hotspot,.hero-v18-hotspot:hover,.hero-v18-hotspot:active{
+  background:transparent!important;border:0!important;box-shadow:none!important;outline:0!important;transform:none!important;
+  color:transparent!important;font-size:0!important;
+}
+.hero-v18-hotspot::before{content:none!important;display:none!important}
+.hero-v18-banner{filter:none!important;image-rendering:auto!important}
+
+/* 3. Strengths: match the supplied fifth reference — tighter number/title relationship, same three-card balance. */
+.strengths{padding:44px 0 42px!important}
+.strengths .wrap{max-width:1240px!important;padding:0 42px!important}
+.strengths .strength-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:22px!important}
+.strength{min-height:354px!important;padding:38px 34px 36px!important;grid-template-columns:58px minmax(0,1fr)!important;column-gap:8px!important}
+.strength .num{width:52px!important;height:52px!important;margin:0!important}
+.strength b{font-size:clamp(18px,1.18vw,21px)!important;line-height:1.55!important}
+.strength p{grid-column:1 / -1!important;font-size:clamp(16px,1.02vw,18px)!important;line-height:2.15!important;margin:48px 0 0!important}
+.strengths::before,.strengths::after{display:block!important}
+@media(max-width:1100px){.strengths .strength-grid{grid-template-columns:1fr!important}.strength{min-height:0!important}}
+
+/* 4. Services: move the full text block one full-width character to the left. */
+.service-body{transform:translateX(-1em)!important}
+
+/* 5. Contact: slightly more vertical breathing room on left; align the visible starts of email/X links. */
+.contact .wrap>div:first-child>p{line-height:2.15!important}
+.contact .wrap>div:first-child>p + p{margin-top:8px!important}
+.contact-links{align-items:flex-start!important}
+.contact-links a{display:block!important;margin-left:0!important}
+.contact-links a:nth-child(2){padding-left:1.45em!important}
+</style>
+
+<style id="v33-final-user-fixes">
+/* HERO: restore the clean original artwork. No mismatched repair blocks. Live buttons cover the original button graphics exactly. */
+.hero-v18-banner{filter:none!important;image-rendering:auto!important;width:100%!important;height:auto!important;display:block!important}
+.hero-v18-hotspot,.hero-v18-hotspot:hover,.hero-v18-hotspot:active{
+ display:flex!important;align-items:center!important;justify-content:center!important;
+ background:#c58eaa!important;color:#fff!important;border:2px solid rgba(255,255,255,.72)!important;
+ border-radius:999px!important;box-shadow:none!important;transform:none!important;outline:0!important;
+ font-family:Georgia,"Yu Mincho","Hiragino Mincho ProN",serif!important;font-weight:700!important;
+ font-size:clamp(16px,1.25vw,23px)!important;letter-spacing:.01em!important;
+ text-rendering:geometricPrecision!important;-webkit-font-smoothing:antialiased!important;
+}
+.hero-v18-hotspot.works{left:10.15%!important;bottom:4.30%!important;width:18.35%!important;height:13.25%!important}
+.hero-v18-hotspot.contact-hit{left:29.25%!important;bottom:4.30%!important;width:15.05%!important;height:13.25%!important}
+.hero-v18-hotspot.works::before{content:"Worksを見る　→"!important;display:block!important}
+.hero-v18-hotspot.contact-hit::before{content:"お問い合わせ　→"!important;display:block!important}
+
+/* STRENGTHS: no break immediately after 「整理し、」 and remove excessive bottom space. */
+.strengths{padding:42px 0 38px!important}
+.strength{min-height:286px!important;padding:32px 34px 30px!important;grid-template-columns:58px minmax(0,1fr)!important;grid-template-rows:auto auto!important;column-gap:8px!important}
+.strength .num{width:52px!important;height:52px!important}
+.strength b{font-size:clamp(18px,1.14vw,21px)!important;line-height:1.55!important;white-space:nowrap!important;word-break:keep-all!important;min-height:0!important}
+.strength p{grid-column:1/-1!important;font-size:clamp(16px,1.02vw,18px)!important;line-height:2.05!important;margin:34px 0 0!important}
+@media(max-width:1450px){.strength b{white-space:normal!important}.strength{min-height:275px!important}}
+@media(max-width:1100px){.strengths .strength-grid{grid-template-columns:1fr!important}.strength{min-height:0!important}}
+
+/* SERVICES: keep first research line on one line; only the parenthetical note is slightly smaller. */
+.service-body{transform:translateX(-1em)!important;padding:30px 1.25em 28px 3.0em!important}
+.service-body h3{margin:0 0 1.25em!important}
+.service-body p{font-size:clamp(14px,.96vw,17px)!important;line-height:1.9!important;margin-left:0!important;white-space:nowrap!important}
+.service-paren{font-size:.88em!important;white-space:nowrap!important}
+@media(max-width:1250px){.service-body p{white-space:normal!important}.service-paren{white-space:normal!important}}
+
+/* CONTACT: links are left-aligned to the exact same x-position, never centered. */
+.contact-links{display:flex!important;flex-direction:column!important;align-items:flex-start!important;justify-content:flex-start!important;text-align:left!important;padding-left:0!important}
+.contact-links a,.contact-links a:nth-child(2){display:block!important;width:auto!important;margin-left:0!important;padding-left:0!important;text-align:left!important}
+</style>
+
+
+<style id="v35-exact-user-fixes">
+/* HERO / banner: keep artwork unchanged and make live buttons clean, crisp, and visually consistent. */
+.hero-v18-banner{filter:none!important;image-rendering:auto!important;transform:translateZ(0)}
+.hero-v18-hotspot,.hero-v18-hotspot:hover,.hero-v18-hotspot:active{
+  display:flex!important;align-items:center!important;justify-content:center!important;
+  background:#c58eaa!important;color:#fff!important;border:2px solid #f8edf2!important;
+  border-radius:999px!important;box-shadow:none!important;transform:none!important;
+  font-family:"Yu Mincho","Hiragino Mincho ProN",Georgia,serif!important;font-weight:700!important;
+  font-size:clamp(16px,1.18vw,22px)!important;line-height:1!important;
+  -webkit-font-smoothing:antialiased!important;text-rendering:geometricPrecision!important;
+}
+.hero-v18-hotspot.works::before{content:"Worksを見る　→"!important;display:block!important}
+.hero-v18-hotspot.contact-hit::before{content:"お問い合わせ　→"!important;display:block!important}
+
+/* All section title pairs: same visual system as requested. */
+.strength-head{display:flex!important;align-items:baseline!important;gap:24px!important;margin:0 0 26px!important}
+.strength-head h2{font-family:Georgia,serif!important;font-size:52px!important;line-height:1!important;font-weight:700!important;margin:0!important}
+.strength-head p{font-family:"Yu Mincho","Hiragino Mincho ProN",serif!important;font-size:18px!important;line-height:1!important;margin:0!important;font-weight:400!important}
+
+/* Strengths: same line-height on every wrapped line, no odd second-line gap, no forced break after 整理し、. */
+.strengths{padding:40px 0 36px!important}
+.strengths .strength-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:22px!important}
+.strength{min-height:286px!important;padding:32px 34px 28px!important;display:grid!important;grid-template-columns:58px minmax(0,1fr)!important;grid-template-rows:auto auto!important;column-gap:8px!important;align-content:start!important}
+.strength .num{width:52px!important;height:52px!important;margin:0!important}
+.strength b{font-size:20px!important;line-height:1.72!important;white-space:normal!important;word-break:keep-all!important;overflow-wrap:normal!important;margin:0!important;padding:0!important}
+.strength p{grid-column:1/-1!important;font-size:17px!important;line-height:2.05!important;margin:34px 0 0!important;padding:0!important}
+@media(min-width:1451px){.strength:first-of-type b{white-space:nowrap!important}}
+@media(max-width:1100px){.strengths .strength-grid{grid-template-columns:1fr!important}.strength{min-height:0!important}}
+
+/* Services: body text begins at the visual position between 0 and 1/2/3; keep research line intact. */
+.service-body{transform:none!important;padding:30px 1.25em 28px 3.45em!important}
+.service-body h3{margin:0 0 1.25em!important;padding:0!important}
+.service-body p{margin:0!important;padding:0!important;font-size:clamp(14px,.96vw,17px)!important;line-height:1.9!important;white-space:nowrap!important}
+.service-paren{font-size:.86em!important;white-space:nowrap!important}
+@media(max-width:1250px){.service-body p{white-space:normal!important}}
+
+/* Contact: same button shape as hero buttons, teal color retained. */
+.contact-actions .btn.primary{
+  display:inline-flex!important;align-items:center!important;justify-content:center!important;
+  min-width:230px!important;height:66px!important;padding:0 34px!important;
+  background:var(--teal)!important;color:#fff!important;border:2px solid #f8edf2!important;
+  border-radius:999px!important;box-shadow:none!important;font-size:20px!important;font-weight:700!important;
+  line-height:1!important;-webkit-font-smoothing:antialiased!important;text-rendering:geometricPrecision!important;
+}
+/* Contact copy and links use the same vertical rhythm; email and X are strictly left-aligned. */
+.contact .wrap>div:first-child>p{font-size:18px!important;line-height:2.15!important;margin:0!important}
+.contact-links{display:grid!important;grid-template-rows:auto auto!important;row-gap:0!important;align-content:start!important;align-items:start!important;justify-items:start!important;text-align:left!important;padding:0!important;margin:0!important}
+.contact-links a,.contact-links a:nth-child(2){font-size:18px!important;line-height:2.15!important;margin:0!important;padding:0!important;width:auto!important;text-align:left!important;justify-self:start!important}
+</style>
+
+
+<style id="v37-user-fixes">
+/* Keep v35 as the visual baseline. Only requested changes below. */
+/* Hero buttons: same clean pill treatment as the final Contact button; retain hero pink. */
+.hero-v18-hotspot,.hero-v18-hotspot:hover,.hero-v18-hotspot:active{
+  border:0!important;
+  box-shadow:none!important;
+  border-radius:999px!important;
+  background:#c58eaa!important;
+  min-height:0!important;
+}
+/* Contact: row 1 = first sentence + email, row 2 = second sentence + X. */
+.contact .wrap{
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;
+  grid-template-rows:auto auto auto!important;
+  column-gap:72px!important;
+  row-gap:0!important;
+  align-items:start!important;
+}
+.contact .wrap>div:first-child{display:contents!important}
+.contact .contact-title-v22{grid-column:1 / -1!important;grid-row:1!important;display:inline-flex!important;width:max-content!important;margin:0 0 30px!important}
+.contact .wrap>div:first-child>p{
+  grid-column:1!important;grid-row:2!important;
+  display:grid!important;grid-template-rows:auto auto!important;
+  font-size:18px!important;line-height:2.15!important;margin:0!important;
+}
+.contact .wrap>div:first-child>p br{display:none!important}
+.contact .wrap>div:first-child>p{white-space:normal!important}
+.contact-links{
+  grid-column:2!important;grid-row:2!important;
+  display:grid!important;grid-template-rows:auto auto!important;
+  row-gap:0!important;padding:0!important;margin:0!important;
+  align-items:start!important;justify-items:start!important;align-self:start!important;
+}
+.contact-links a,.contact-links a:nth-child(2){
+  font-size:18px!important;line-height:2.15!important;margin:0!important;padding:0!important;text-align:left!important;
+}
+.contact-actions{grid-column:1!important;grid-row:3!important;margin-top:30px!important}
+@media(max-width:800px){
+ .contact .wrap{display:block!important}
+ .contact .wrap>div:first-child{display:block!important}
+ .contact .wrap>div:first-child>p{display:block!important}
+ .contact .wrap>div:first-child>p br{display:block!important}
+ .contact-links{display:flex!important;margin-top:18px!important}
+ .contact-actions{margin-top:28px!important}
+}
+</style>
+<script id="v37-contact-lines">
+(function(){
+ const p=document.querySelector('.contact .wrap>div:first-child>p');
+ if(p){p.innerHTML='<span>SNS運用支援、投稿制作、資料制作、業務整理など、</span><span>お気軽にご相談ください。</span>';}
+})();
+</script>
+
+
+<script id="v40-final-js">
+(()=>{
+ const hero=document.querySelector('.hero-v18'); if(!hero) return;
+ hero.querySelectorAll('.hero-v18-hotspot').forEach(el=>el.remove());
+ const old=hero.querySelector('.hero-v40-buttons'); if(old) old.remove();
+ const box=document.createElement('div'); box.className='hero-v40-buttons';
+ box.innerHTML='<a class="hero-v40-btn works" href="#works"><span>Worksを見る</span><span>→</span></a><a class="hero-v40-btn inquiry inquiry-open" href="#contact"><span>お問い合わせ</span><span>→</span></a>';
+ hero.appendChild(box);
+ hero.querySelectorAll('.hero-live-copy,.hero-live-badge').forEach(el=>el.remove());
+ const copy=document.createElement('div'); copy.className='hero-live-copy';
+ copy.innerHTML='<div class="hero-live-eyebrow">SNS OPERATION SUPPORT<br>/ CONTENT DESIGN</div><div class="hero-live-title">情報を整理し、<br>伝わる形に。</div><div class="hero-live-desc">SNS運用支援から投稿設計・コンテンツ制作まで。<br>「誰に・何を・どう伝えるか」を整理し、<br>次の行動につながる発信を支えます。</div>';
+ hero.appendChild(copy);
+ const badge=document.createElement('div'); badge.className='hero-live-badge';
+ badge.innerHTML='<div>SNS運用<br>デザイン制作<br>業務サポート<br><span class="dark">で<br>ビジネスの成長を<br>サポートします</span></div>';
+ hero.appendChild(badge);
+ const cards=document.querySelectorAll('.strength');
+ if(cards[0]) cards[0].querySelector('b').innerHTML='整理し、分かりやすい<br>形にする力';
+ if(cards[2]) cards[2].querySelector('b').innerHTML='調べ、試し、改善を<br>重ねる力';
+})();
+</script>
+
+<style id="v42-exact-fixes">
+/* 1) HERO: use exactly one teal so no horizontal/rectangular color step is visible. */
+.hero-v18{background:#426d78!important}
+.hero-live-copy{background:#426d78!important}
+/* Move the two buttons slightly to the right, preserving their current design. */
+.hero-v40-buttons{left:9.0%!important}
+
+/* 2) Strength titles: preserve the user's exact line breaks, regardless of viewport width. */
+.strengths .strength b{white-space:normal!important;word-break:keep-all!important;overflow-wrap:normal!important}
+.strengths .strength b .forced-line{display:block!important;white-space:nowrap!important}
+
+/* 3) HERO live text: reduce every rebuilt text element by exactly 2px. */
+.hero-live-eyebrow{font-size:clamp(9px,calc(.86vw - 2px),15px)!important}
+.hero-live-title{font-size:clamp(34px,calc(4.25vw - 2px),80px)!important}
+.hero-live-desc{font-size:clamp(11px,calc(1.18vw - 2px),21px)!important}
+.hero-live-badge{font-size:clamp(11px,calc(1.12vw - 2px),20px)!important}
+</style>
+<script id="v42-exact-js">
+(()=>{
+ const cards=document.querySelectorAll('.strength');
+ if(cards[0]) cards[0].querySelector('b').innerHTML='<span class="forced-line">整理し、分かりやすい</span><span class="forced-line">形にする力</span>';
+ if(cards[2]) cards[2].querySelector('b').innerHTML='<span class="forced-line">調べ、試し、改善を</span><span class="forced-line">重ねる力</span>';
+})();
+</script>
+
+
+<style id="v43-user-fixes">
+/* Strengths: title +1px, and remove about one line of excess space at the bottom of each card. */
+.strengths .strength b{font-size:21px!important}
+.strengths .strength{min-height:252px!important;padding-bottom:20px!important}
+
+/* Hero: make every rebuilt text element smaller again, without changing layout/artwork. */
+.hero-live-eyebrow{font-size:clamp(8px,calc(.86vw - 4px),13px)!important}
+.hero-live-title{font-size:clamp(32px,calc(4.25vw - 4px),78px)!important}
+.hero-live-desc{font-size:clamp(10px,calc(1.18vw - 4px),19px)!important}
+.hero-live-badge{font-size:clamp(10px,calc(1.12vw - 4px),18px)!important}
+.hero-v40-btn{font-size:18px!important}
+/* Nudge the button pair a little farther right. */
+.hero-v40-buttons{left:9.8%!important}
+</style>
+
+</body></html>
