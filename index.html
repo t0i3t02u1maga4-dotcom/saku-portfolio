@@ -1276,3 +1276,20 @@ document.querySelector('#modal .close').onclick=closeModal;modal.onclick=e=>{if(
   }
 }
 </style>
+<style id="v45-mobile-hero-cleanup">
+@media (max-width:800px){
+  /* Hide the faint remnants of the removed hero buttons on mobile only. */
+  .hero-v18::after{
+    content:""!important;
+    display:block!important;
+    position:absolute!important;
+    left:10.5%!important;
+    bottom:4.0%!important;
+    width:82%!important;
+    height:14%!important;
+    background:#426d78!important;
+    z-index:3!important;
+    pointer-events:none!important;
+  }
+}
+</style>
