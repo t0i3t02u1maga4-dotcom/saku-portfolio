@@ -1200,3 +1200,79 @@ document.querySelector('#modal .close').onclick=closeModal;modal.onclick=e=>{if(
 </style>
 
 </body></html>
+<style id="v44-mobile-strengths-fix">
+/* Mobile-only fix for Strengths. Desktop/tablet design remains unchanged. */
+@media (max-width:800px){
+  .strengths{padding:32px 0 30px!important;overflow:hidden!important}
+  .strengths .wrap{width:min(100% - 28px,1180px)!important;margin-inline:auto!important}
+
+  .strength-head{
+    display:flex!important;
+    flex-direction:row!important;
+    flex-wrap:wrap!important;
+    align-items:baseline!important;
+    justify-content:flex-start!important;
+    gap:7px 14px!important;
+    width:100%!important;
+    margin:0 0 22px!important;
+  }
+  .strength-head h2{
+    font-size:40px!important;
+    line-height:1!important;
+    white-space:nowrap!important;
+    writing-mode:horizontal-tb!important;
+  }
+  .strength-head p{
+    font-size:15px!important;
+    line-height:1.35!important;
+    white-space:nowrap!important;
+    writing-mode:horizontal-tb!important;
+  }
+
+  .strengths .strength-grid{
+    grid-template-columns:minmax(0,1fr)!important;
+    gap:18px!important;
+    width:100%!important;
+  }
+  .strengths .strength{
+    width:100%!important;
+    max-width:100%!important;
+    min-width:0!important;
+    min-height:0!important;
+    box-sizing:border-box!important;
+    padding:24px 22px 26px!important;
+    grid-template-columns:52px minmax(0,1fr)!important;
+    grid-template-rows:auto auto!important;
+    column-gap:14px!important;
+  }
+  .strengths .strength .num{
+    width:48px!important;
+    height:48px!important;
+    align-self:start!important;
+  }
+  .strengths .strength b{
+    min-width:0!important;
+    max-width:100%!important;
+    font-size:17px!important;
+    line-height:1.65!important;
+    white-space:normal!important;
+    word-break:normal!important;
+    overflow-wrap:anywhere!important;
+    text-align:left!important;
+    align-self:start!important;
+  }
+  /* Keep the user's explicit 01 / 03 line breaks, but never allow horizontal overflow. */
+  .strengths .strength b .forced-line{
+    display:block!important;
+    white-space:normal!important;
+    max-width:100%!important;
+  }
+  .strengths .strength p{
+    grid-column:1/-1!important;
+    margin:22px 0 0!important;
+    font-size:15px!important;
+    line-height:1.9!important;
+    overflow-wrap:anywhere!important;
+  }
+}
+</style>
