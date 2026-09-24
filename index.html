@@ -1636,6 +1636,105 @@ document.querySelector('#modal .close').onclick=closeModal;modal.onclick=e=>{if(
   .mind > small{display:block!important;margin-bottom:22px!important;}
 }
 </style>
+
+<style id="exact-base-merge-20260925">
+/*
+  BASE POLICY
+  - 1index.html is the visual/design baseline everywhere.
+  - Only the About layout at narrower desktop widths borrows the About-only
+    sizing rules from 000index.html.
+  - No Strengths / Services / Works / Result / Mindsets / Contact layout,
+    color, spacing, copy or decorative-flower rules are changed here.
+*/
+
+/* Major section-title sizing only. Preserve each section's existing colors. */
+@media (min-width:801px){
+  #about .section-title,
+  .strengths .strength-head h2,
+  #services .section-title,
+  #works .section-title,
+  #contact .contact-title-v22 .en{
+    font-family:Georgia,serif!important;
+    font-size:52px!important;
+    line-height:1!important;
+    font-weight:700!important;
+  }
+
+  #about .section-title .sub,
+  .strengths .strength-head p,
+  #services .section-title .sub,
+  #works .section-title .sub,
+  #contact .contact-title-v22 .jp{
+    font-family:"Yu Mincho","Hiragino Mincho ProN",serif!important;
+    font-size:18px!important;
+    line-height:1!important;
+    font-weight:400!important;
+  }
+
+  /* Keep Contact + Japanese subtitle as the same heading group/baseline. */
+  #contact .contact-title-v22{
+    display:inline-flex!important;
+    align-items:baseline!important;
+    gap:22px!important;
+    width:max-content!important;
+  }
+}
+
+/* About only: copy the narrow-desktop geometry from 000index.html.
+   All other sections remain exactly on the 1index.html rules. */
+@media (min-width:801px) and (max-width:1500px){
+  #about .wrap{
+    max-width:1240px!important;
+    width:min(100% - 34px,1240px)!important;
+    padding-left:clamp(18px,2.1vw,42px)!important;
+    padding-right:clamp(18px,2.1vw,42px)!important;
+  }
+  #about .about-grid{
+    grid-template-columns:clamp(210px,19vw,280px) minmax(0,1.2fr) clamp(220px,21vw,300px)!important;
+    gap:clamp(18px,2vw,42px)!important;
+    align-items:center!important;
+  }
+  #about .about-grid > div{min-width:0!important;}
+  #about .profile-frame{
+    width:clamp(210px,19vw,280px)!important;
+    height:clamp(285px,25vw,360px)!important;
+  }
+  #about .about-title-desktop{
+    font-size:clamp(30px,2.8vw,38px)!important;
+    line-height:1.46!important;
+  }
+  #about .about-grid > div:nth-child(2) > p{
+    font-size:clamp(12.5px,.95vw,14px)!important;
+    line-height:1.95!important;
+  }
+  #about .quick{
+    padding-left:clamp(14px,1.4vw,28px)!important;
+  }
+  #about .quick div{
+    font-size:clamp(11.2px,.84vw,13px)!important;
+    padding:clamp(10px,.95vw,13px) 0!important;
+    white-space:nowrap!important;
+  }
+}
+
+@media (min-width:801px) and (max-width:1280px){
+  #about .about-grid{
+    grid-template-columns:210px minmax(0,1.12fr) 215px!important;
+    gap:18px!important;
+  }
+  #about .about-title-desktop{
+    font-size:clamp(27px,2.45vw,33px)!important;
+  }
+  #about .about-grid > div:nth-child(2) > p{
+    font-size:12.5px!important;
+    line-height:1.88!important;
+  }
+  #about .quick div{
+    font-size:11px!important;
+  }
+}
+</style>
+
 </body></html>
 <style id="v44-mobile-strengths-fix">
 /* Mobile-only fix for Strengths. Desktop/tablet design remains unchanged. */
@@ -1831,92 +1930,4 @@ document.querySelector('#modal .close').onclick=closeModal;modal.onclick=e=>{if(
     white-space: nowrap !important;
   }
 }
-</style>
-
-
-<style id="final-merge-from-user-approved-1index-000index">
-/*
-  FINAL MERGE
-  - Base: 1index.html
-  - About on smaller PC windows: reproduce the approved 000index.html behavior
-  - Strengths / Services / Result / Works / Work Mindsets / Contact: keep 1index.html behavior
-  - Major section titles use one size system; WORK MINDSETS is intentionally untouched
-*/
-
-/* Major section title pairs — one visual size system on PC/tablet. */
-@media (min-width:801px){
-  .section-title,
-  .strength-head h2,
-  .contact-title-v22 .en{
-    font-family:Georgia,serif!important;
-    font-size:clamp(40px,3.15vw,52px)!important;
-    line-height:1!important;
-    font-weight:700!important;
-  }
-  .section-title .sub,
-  .strength-head p,
-  .contact-title-v22 .jp{
-    font-family:"Yu Mincho","Hiragino Mincho ProN",serif!important;
-    font-size:clamp(15px,1.05vw,18px)!important;
-    line-height:1.25!important;
-    font-weight:400!important;
-  }
-}
-
-/* About only: use the approved 000index small-PC behavior. */
-@media (min-width:801px) and (max-width:1500px){
-  .about .wrap{
-    max-width:1240px!important;
-    width:min(100% - 34px,1240px)!important;
-    margin-left:auto!important;
-    margin-right:auto!important;
-    padding-left:clamp(18px,2.1vw,42px)!important;
-    padding-right:clamp(18px,2.1vw,42px)!important;
-  }
-  .about-grid{
-    grid-template-columns:clamp(210px,19vw,280px) minmax(0,1.2fr) clamp(220px,21vw,300px)!important;
-    gap:clamp(18px,2vw,42px)!important;
-    align-items:center!important;
-  }
-  .about-grid > div{min-width:0!important;}
-  .about .profile-frame{
-    width:clamp(210px,19vw,280px)!important;
-    height:clamp(285px,25vw,360px)!important;
-  }
-  .about-title-desktop{
-    font-size:clamp(30px,2.8vw,38px)!important;
-    line-height:1.46!important;
-  }
-  .about p{
-    font-size:clamp(12.5px,.95vw,14px)!important;
-    line-height:1.95!important;
-  }
-  .about .quick{
-    padding-left:clamp(14px,1.4vw,28px)!important;
-  }
-  .about .quick div{
-    font-size:clamp(11.2px,.84vw,13px)!important;
-    padding:clamp(10px,.95vw,13px) 0!important;
-    white-space:nowrap!important;
-  }
-}
-
-@media (min-width:801px) and (max-width:1280px){
-  .about-grid{
-    grid-template-columns:210px minmax(0,1.12fr) 215px!important;
-    gap:18px!important;
-  }
-  .about-title-desktop{
-    font-size:clamp(27px,2.45vw,33px)!important;
-  }
-  .about p{
-    font-size:12.5px!important;
-    line-height:1.88!important;
-  }
-  .about .quick div{
-    font-size:11px!important;
-  }
-}
-
-/* Smartphone styles intentionally remain exactly as in 1index.html. */
 </style>
