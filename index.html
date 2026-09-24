@@ -669,6 +669,126 @@ html,body{overflow-x:hidden}
   .about-grid p,.about-grid .quick{max-width:100%!important;box-sizing:border-box!important;}
 }
 </style>
+
+<style id="about-mobile-title-center-final">
+@media (max-width:800px){
+  .about-title-mobile{
+    width:100% !important;
+    max-width:100% !important;
+    margin:0 auto 28px !important;
+    padding:0 !important;
+    text-align:center !important;
+    position:static !important;
+    left:auto !important;
+    transform:none !important;
+  }
+  .about-title-mobile span{
+    display:block !important;
+    width:100% !important;
+    max-width:100% !important;
+    margin:0 auto !important;
+    text-align:center !important;
+    white-space:nowrap !important;
+  }
+}
+</style>
+
+<style id="about-mobile-title-group-centered">
+@media (max-width:800px){
+  .about-title-mobile{
+    display:block!important;
+    width:max-content!important;
+    max-width:100%!important;
+    margin:0 auto 28px!important;
+    padding:0!important;
+    text-align:left!important;
+    position:static!important;
+    left:auto!important;
+    transform:none!important;
+  }
+  .about-title-mobile span{
+    display:block!important;
+    width:auto!important;
+    max-width:none!important;
+    margin:0!important;
+    text-align:left!important;
+    white-space:nowrap!important;
+  }
+}
+</style>
+
+
+<style id="about-mobile-title-group-center-final">
+@media (max-width:800px){
+  .about-title-mobile{
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:flex-start!important;
+    justify-content:flex-start!important;
+    width:-moz-fit-content!important;
+    width:fit-content!important;
+    max-width:100%!important;
+    margin:0 auto 28px!important;
+    padding:0!important;
+    text-align:left!important;
+    position:static!important;
+    left:auto!important;
+    right:auto!important;
+    transform:none!important;
+  }
+  .about-title-mobile span{
+    display:block!important;
+    width:auto!important;
+    max-width:none!important;
+    margin:0!important;
+    text-align:left!important;
+    white-space:nowrap!important;
+  }
+}
+</style>
+
+<style id="about-mobile-title-group-center-safe">
+@media (max-width:800px){
+  html,body{overflow-x:hidden!important;}
+  .about-grid > div:nth-child(2){
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:center!important;
+  }
+  .about-title-mobile{
+    display:inline-flex!important;
+    flex-direction:column!important;
+    align-items:flex-start!important;
+    justify-content:flex-start!important;
+    width:max-content!important;
+    max-width:calc(100vw - 64px)!important;
+    margin:0 auto 28px!important;
+    padding:0!important;
+    text-align:left!important;
+    position:static!important;
+    left:auto!important;
+    right:auto!important;
+    transform:none!important;
+    font-size:clamp(20px,5.8vw,24px)!important;
+    line-height:1.6!important;
+    letter-spacing:0!important;
+    box-sizing:border-box!important;
+  }
+  .about-title-mobile span{
+    display:block!important;
+    width:max-content!important;
+    max-width:none!important;
+    margin:0!important;
+    padding:0!important;
+    text-align:left!important;
+    white-space:nowrap!important;
+    box-sizing:border-box!important;
+  }
+  .about-grid > div:nth-child(2) > p{
+    width:100%!important;
+  }
+}
+</style>
 </head><body>
 <header><div class="wrap" style="width:100%"><nav><a class="logo" href="#">Saku<span>✿</span></a><a href="#about">About</a><a href="#services">Services</a><a href="#works">Works</a><a href="#mind">Mindsets</a><a href="#contact">Contact</a><a class="contact-btn inquiry-open" href="#">お問い合わせ</a></nav></div></header>
 <section class="hero hero-v18" aria-label="Saku ポートフォリオ トップ">
