@@ -1818,3 +1818,17 @@ document.querySelector('#modal .close').onclick=closeModal;modal.onclick=e=>{if(
   }
 }
 </style>
+<style id="pc-services-shift-v11">
+@media (min-width: 801px){
+  /* PC fine-tuning based on small-window feedback */
+  #services .service:nth-child(2) .service-body{
+    padding-left: 4.95em !important; /* half-width left from v10 */
+  }
+  #services .service:nth-child(3) .service-body{
+    padding-left: 4.55em !important; /* move left so first line fits better */
+  }
+  #services .service:nth-child(3) .service-body p{
+    white-space: nowrap !important;
+  }
+}
+</style>
