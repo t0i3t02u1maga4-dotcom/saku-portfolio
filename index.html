@@ -627,6 +627,48 @@ html,body{overflow-x:hidden}
 @media(max-width:1200px){.strengths .strength b{font-size:15px!important}.hero-v40-btn{min-width:190px!important;height:48px!important}}
 @media(max-width:800px){.hero-live-copy,.hero-live-badge,.hero-v40-buttons{display:none!important}}
 </style>
+
+<style id="about-mobile-title-balance">
+.about-title-mobile{display:none!important}
+@media(max-width:800px){
+  .about-title-desktop{display:none!important}
+  .about-title-mobile{display:block!important;font-size:clamp(28px,7.2vw,34px)!important;line-height:1.55!important;letter-spacing:.015em!important;margin:0 0 28px!important}
+  .about-title-mobile span{display:block!important;white-space:nowrap!important}
+}
+</style>
+
+<style id="about-mobile-title-left-fix">
+@media(max-width:800px){
+  .about-title-mobile{
+    margin-left:-10px!important;
+    width:calc(100% + 16px)!important;
+  }
+}
+</style>
+
+<style id="about-mobile-alignment-fix">
+@media (max-width:800px){
+  html,body{max-width:100%;overflow-x:hidden!important;}
+  .about .wrap{width:min(100% - 32px,1180px)!important;margin-left:auto!important;margin-right:auto!important;}
+  .about-grid{width:100%!important;min-width:0!important;}
+  .about-grid>div{min-width:0!important;}
+  .about-title-mobile{
+    margin-left:0!important;
+    margin-right:0!important;
+    width:100%!important;
+    max-width:100%!important;
+    font-size:clamp(25px,6.6vw,30px)!important;
+    line-height:1.55!important;
+    box-sizing:border-box!important;
+  }
+  .about-title-mobile span{
+    display:block!important;
+    white-space:nowrap!important;
+    max-width:100%!important;
+  }
+  .about-grid p,.about-grid .quick{max-width:100%!important;box-sizing:border-box!important;}
+}
+</style>
 </head><body>
 <header><div class="wrap" style="width:100%"><nav><a class="logo" href="#">Saku<span>✿</span></a><a href="#about">About</a><a href="#services">Services</a><a href="#works">Works</a><a href="#mind">Mindsets</a><a href="#contact">Contact</a><a class="contact-btn inquiry-open" href="#">お問い合わせ</a></nav></div></header>
 <section class="hero hero-v18" aria-label="Saku ポートフォリオ トップ">
@@ -634,7 +676,7 @@ html,body{overflow-x:hidden}
   <a class="hero-v18-hotspot works" href="#works" aria-label="Worksを見る"><span>Worksを見る</span><b>→</b></a>
   <a class="hero-v18-hotspot contact-hit inquiry-open" href="#contact" aria-label="お問い合わせ"><span>お問い合わせ</span><b>→</b></a>
 </section>
-<section class="section about" id="about"><div class="wrap"><h2 class="section-title">About <span class="sub">わたしについて</span></h2><div class="about-grid"><div class="profile-frame"><img src="asset-03.webp" alt="Saku profile"></div><div><h2>金融11年で培った「整理する力」を、<br>SNS運用と業務サポートに。</h2><p>金融業界で11年間、事務・営業の両面からお客様対応に携わってきました。相手の意図を汲み取り、必要な情報を整理し、正確に進めることを大切にしています。現在は、Xを中心としたSNS運用支援・投稿制作に加え、業務フローの整理やマニュアル作成など、バックオフィス業務もサポートしています。「伝わる形に整理すること」と「続けやすい仕組みに整えること」を通して、発信と業務の両面から支援します。</p></div><div class="quick"><div>✿ Saku</div><div>▣ 金融業界11年｜事務・営業</div><div>↗ SNS運用支援｜投稿設計・制作</div><div>▤ 業務整理｜マニュアル・仕組み化</div><div>♡ 強み｜整理・正確さ・改善力</div></div></div></div></section>
+<section class="section about" id="about"><div class="wrap"><h2 class="section-title">About <span class="sub">わたしについて</span></h2><div class="about-grid"><div class="profile-frame"><img src="asset-03.webp" alt="Saku profile"></div><div><h2 class="about-title about-title-desktop">金融11年で培った「整理する力」を、<br>SNS運用と業務サポートに。</h2><h2 class="about-title about-title-mobile"><span>金融11年で培った</span><span>「整理する力」を、</span><span>SNS運用と業務サポートに。</span></h2><p>金融業界で11年間、事務・営業の両面からお客様対応に携わってきました。相手の意図を汲み取り、必要な情報を整理し、正確に進めることを大切にしています。現在は、Xを中心としたSNS運用支援・投稿制作に加え、業務フローの整理やマニュアル作成など、バックオフィス業務もサポートしています。「伝わる形に整理すること」と「続けやすい仕組みに整えること」を通して、発信と業務の両面から支援します。</p></div><div class="quick"><div>✿ Saku</div><div>▣ 金融業界11年｜事務・営業</div><div>↗ SNS運用支援｜投稿設計・制作</div><div>▤ 業務整理｜マニュアル・仕組み化</div><div>♡ 強み｜整理・正確さ・改善力</div></div></div></div></section>
 <section class="strengths"><div class="wrap strength-grid"><div class="strength-head"><h2>Strengths</h2><p>わたしの強み</p></div><div class="strength"><span class="num">01</span><b>整理し、分かりやすい形にする力</b><p>情報や課題を整理し、相手が理解<br>しやすく次の行動に移りやすい形に整えます。</p></div><div class="strength"><span class="num">02</span><b>仕組みに落とし込み、改善する力</b><p>マニュアル化やチェック体制の整備など、再現性のある運用を意識します。</p></div><div class="strength"><span class="num">03</span><b>調べ、試し、改善を重ねる力</b><p>必要な情報を調べ、実際に試しながら数値をもとに改善します。</p></div></div></section>
 <section class="section" id="services"><img class="decor-flower-left" src="asset-04.webp" alt=""><div class="wrap"><h2 class="section-title">Services <span class="sub">対応可能な業務</span></h2><div class="services-grid"><div class="service"><div class="service-top"></div><div class="service-body"><h3>01 SNS運用支援</h3><p>リサーチ / 分析<span class="service-paren">（市場・競合・ターゲット）</span><br>アカウント設計 / 投稿設計<br>構成・文章作成・デザイン<br>DM / フォロー等の運用サポート<br>簡易分析 / 改善提案</p></div></div><div class="service"><div class="service-top"></div><div class="service-body"><h3>02 SNSコンテンツ制作</h3><p>Instagramフィード投稿デザイン<br>Instagramサムネイル制作<br>X投稿デザイン / 図解投稿<br>バナー / チラシ / 名刺等<br>動画編集（CapCut）</p></div></div><div class="service"><div class="service-top"></div><div class="service-body"><h3>03 資料・業務サポート</h3><p>営業資料 / 提案資料 / セミナー資料<br>データ入力 / 管理<br>業務フロー整理 / マニュアル作成<br>チェック体制構築 / タスク管理<br>顧客対応</p></div></div></div></div></section>
 <section class="result"><div class="wrap result-grid"><div><small>SNS OPERATION RESULT</small><h2>運用支援の実績</h2><p>AI副業ジャンルのX運用支援</p></div><div class="metric"><b>30</b><span>運用日数</span></div><div class="metric"><b>117</b><span>DM送付</span></div><div class="metric"><b>11</b><span>登録</span></div><div class="metric"><b>9.4%</b><span>登録率</span></div></div></section>
