@@ -1052,6 +1052,7 @@ function openGallery(i){const g=galleries[i];
   0:'フリーランス男性向け<br>ガジェット紹介投稿',
   1:'ファン化を促す<br>フィード投稿',
   2:'AIソリューション<br>営業資料',
+  3:'美容サロン<br>広告バナー',
   4:'在宅仕事<br>サムネイル'
  };
  mt.innerHTML=(mobile&&mobileTitles[i])?mobileTitles[i]:g.title;
@@ -1786,3 +1787,20 @@ document.querySelector('#modal .close').onclick=closeModal;modal.onclick=e=>{if(
   }
 })();
 </script>
+
+<style id="v8-mobile-modal-title-lines">
+@media (max-width:800px){
+  /* Gadget title: keep the requested first line intact. */
+  #modal[data-gallery-index="0"] h2{
+    font-size:18px!important;
+    line-height:1.32!important;
+    white-space:normal!important;
+  }
+  /* Beauty banner title: explicit two-line title. */
+  #modal[data-gallery-index="3"] h2{
+    font-size:22px!important;
+    line-height:1.32!important;
+    white-space:normal!important;
+  }
+}
+</style>
