@@ -931,14 +931,16 @@ html,body{overflow-x:hidden}
 </span>
 <span class="mind-mobile-copy">
 <span class="mind-line">デザインやSNS運用、バックオフィス業務</span>
-<span class="mind-line">など、どの仕事においても大切にしているのは、</span>
-<span class="mind-line">情報や目的を整理し、相手に</span>
+<span class="mind-line">など、どの仕事においても大切にしている</span>
+<span class="mind-line">のは、情報や目的を整理し、相手に</span>
 <span class="mind-line">とって分かりやすい形に整えることです。</span>
-<span class="mind-line">制作では「誰に・何を・どのように伝えるのか」を考え、</span>
-<span class="mind-line">見る人が理解しやすく、次の行動につながるよう</span>
-<span class="mind-line">情報の順序や見せ方を設計します。</span>
+<span class="mind-line">制作では「誰に・何を・どのように伝える</span>
+<span class="mind-line">のか」を考え、見る人が理解しやすく、</span>
+<span class="mind-line">次の行動につながるよう情報の順序や見せ方を</span>
+<span class="mind-line">設計します。</span>
 <span class="mind-line">また、業務では一度きりの対応で終わらせず、</span>
-<span class="mind-line">次回以降も進めやすい形に整理することを意識しています。</span>
+<span class="mind-line">次回以降も進めやすい形に整理</span>
+<span class="mind-line">することを意識しています。</span>
 </span>
 </p></section>
 <section class="contact" id="contact"><div class="wrap"><div><h2><span>Contact</span>　ご相談・ご依頼</h2><p>SNS運用支援、投稿制作、資料制作、業務整理など、<br>お気軽にご相談ください。</p><div class="contact-actions"><a class="btn primary inquiry-open" href="#">お問い合わせ →</a></div></div><div class="contact-links"><a href="mailto:t0i3.t02u.1maga.4@gmail.com">✉ t0i3.t02u.1maga.4@gmail.com</a><a href="https://x.com/SakuSNSDesigner" target="_blank" rel="noopener">X @SakuSNSDesigner</a></div></div></section>
@@ -1608,3 +1610,77 @@ document.querySelector('#modal .close').onclick=closeModal;modal.onclick=e=>{if(
   }
 }
 </style>
+
+
+<style id="v47-mobile-final-corrections">
+@media (max-width:800px){
+
+  /* WORK MINDSETS:
+     fixed, intentional line breaks; prevent the browser from creating ugly extra breaks. */
+  .mind p{
+    font-size:14.5px!important;
+    line-height:2.05!important;
+  }
+  .mind-mobile-copy{
+    display:block!important;
+    width:max-content!important;
+    max-width:100%!important;
+    margin-left:auto!important;
+    margin-right:auto!important;
+    text-align:left!important;
+  }
+  .mind-mobile-copy .mind-line{
+    display:block!important;
+    white-space:nowrap!important;
+    margin:0 0 .62em!important;
+  }
+
+  /* SERVICES 01–03:
+     title centered.
+     Body text remains left aligned, but the entire text block is centered in each card. */
+  #services .service .service-body{
+    transform:none!important;
+    padding-left:24px!important;
+    padding-right:24px!important;
+  }
+  #services .service .service-body h3{
+    width:100%!important;
+    margin-left:auto!important;
+    margin-right:auto!important;
+    text-align:center!important;
+  }
+  #services .service .service-body p{
+    display:table!important;
+    width:auto!important;
+    max-width:100%!important;
+    margin-left:auto!important;
+    margin-right:auto!important;
+    text-align:left!important;
+  }
+
+  /* STRENGTH 02:
+     exact requested two-line break. */
+  .strengths .strength:nth-child(3) b{
+    text-align:left!important;
+  }
+  .strengths .strength:nth-child(3) b .mobile-strength-line{
+    display:block!important;
+    white-space:nowrap!important;
+  }
+}
+</style>
+
+
+<script id="v47-mobile-final-js">
+(()=>{
+  const cards = document.querySelectorAll('.strengths .strength');
+  if(cards[1]){
+    const title = cards[1].querySelector('b');
+    if(title){
+      title.innerHTML =
+        '<span class="mobile-strength-line">仕組みに落とし込み、</span>' +
+        '<span class="mobile-strength-line">改善する力</span>';
+    }
+  }
+})();
+</script>
