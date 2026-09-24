@@ -1636,105 +1636,6 @@ document.querySelector('#modal .close').onclick=closeModal;modal.onclick=e=>{if(
   .mind > small{display:block!important;margin-bottom:22px!important;}
 }
 </style>
-
-<style id="exact-base-merge-20260925">
-/*
-  BASE POLICY
-  - 1index.html is the visual/design baseline everywhere.
-  - Only the About layout at narrower desktop widths borrows the About-only
-    sizing rules from 000index.html.
-  - No Strengths / Services / Works / Result / Mindsets / Contact layout,
-    color, spacing, copy or decorative-flower rules are changed here.
-*/
-
-/* Major section-title sizing only. Preserve each section's existing colors. */
-@media (min-width:801px){
-  #about .section-title,
-  .strengths .strength-head h2,
-  #services .section-title,
-  #works .section-title,
-  #contact .contact-title-v22 .en{
-    font-family:Georgia,serif!important;
-    font-size:52px!important;
-    line-height:1!important;
-    font-weight:700!important;
-  }
-
-  #about .section-title .sub,
-  .strengths .strength-head p,
-  #services .section-title .sub,
-  #works .section-title .sub,
-  #contact .contact-title-v22 .jp{
-    font-family:"Yu Mincho","Hiragino Mincho ProN",serif!important;
-    font-size:18px!important;
-    line-height:1!important;
-    font-weight:400!important;
-  }
-
-  /* Keep Contact + Japanese subtitle as the same heading group/baseline. */
-  #contact .contact-title-v22{
-    display:inline-flex!important;
-    align-items:baseline!important;
-    gap:22px!important;
-    width:max-content!important;
-  }
-}
-
-/* About only: copy the narrow-desktop geometry from 000index.html.
-   All other sections remain exactly on the 1index.html rules. */
-@media (min-width:801px) and (max-width:1500px){
-  #about .wrap{
-    max-width:1240px!important;
-    width:min(100% - 34px,1240px)!important;
-    padding-left:clamp(18px,2.1vw,42px)!important;
-    padding-right:clamp(18px,2.1vw,42px)!important;
-  }
-  #about .about-grid{
-    grid-template-columns:clamp(210px,19vw,280px) minmax(0,1.2fr) clamp(220px,21vw,300px)!important;
-    gap:clamp(18px,2vw,42px)!important;
-    align-items:center!important;
-  }
-  #about .about-grid > div{min-width:0!important;}
-  #about .profile-frame{
-    width:clamp(210px,19vw,280px)!important;
-    height:clamp(285px,25vw,360px)!important;
-  }
-  #about .about-title-desktop{
-    font-size:clamp(30px,2.8vw,38px)!important;
-    line-height:1.46!important;
-  }
-  #about .about-grid > div:nth-child(2) > p{
-    font-size:clamp(12.5px,.95vw,14px)!important;
-    line-height:1.95!important;
-  }
-  #about .quick{
-    padding-left:clamp(14px,1.4vw,28px)!important;
-  }
-  #about .quick div{
-    font-size:clamp(11.2px,.84vw,13px)!important;
-    padding:clamp(10px,.95vw,13px) 0!important;
-    white-space:nowrap!important;
-  }
-}
-
-@media (min-width:801px) and (max-width:1280px){
-  #about .about-grid{
-    grid-template-columns:210px minmax(0,1.12fr) 215px!important;
-    gap:18px!important;
-  }
-  #about .about-title-desktop{
-    font-size:clamp(27px,2.45vw,33px)!important;
-  }
-  #about .about-grid > div:nth-child(2) > p{
-    font-size:12.5px!important;
-    line-height:1.88!important;
-  }
-  #about .quick div{
-    font-size:11px!important;
-  }
-}
-</style>
-
 </body></html>
 <style id="v44-mobile-strengths-fix">
 /* Mobile-only fix for Strengths. Desktop/tablet design remains unchanged. */
@@ -1928,6 +1829,203 @@ document.querySelector('#modal .close').onclick=closeModal;modal.onclick=e=>{if(
   }
   #services .service:nth-child(3) .service-body p{
     white-space: nowrap !important;
+  }
+}
+</style>
+
+
+<style id="final-strength-contact-about-fix-20260925">
+/* =========================================================
+   2026-09-25
+   ONLY the three requested corrections:
+   1) Strengths: keep the 3-card full-window composition in a smaller PC window.
+   2) Contact: keep 「Contact」 and 「ーご相談・ご依頼ー」 as one aligned title block.
+   3) About: reduce the main pink title by about 5px on PC so it stays inside its column.
+   Everything else remains the 1index.html baseline.
+   ========================================================= */
+
+/* 「わたしの強み」は元デザインどおり白のまま */
+.strengths .strength-head p{
+  color:#fff !important;
+}
+
+/* Small PC window: preserve the full-window Strengths composition (3 cards across).
+   Only scale the contents down; do not switch to a single-column layout. */
+@media (min-width:801px) and (max-width:1500px){
+  .strengths .wrap{
+    max-width:1240px !important;
+    width:min(calc(100% - 34px),1240px) !important;
+    padding-left:clamp(18px,2.1vw,42px) !important;
+    padding-right:clamp(18px,2.1vw,42px) !important;
+  }
+
+  .strengths .strength-grid{
+    display:grid !important;
+    grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+    gap:clamp(12px,1.5vw,22px) !important;
+    align-items:stretch !important;
+  }
+
+  .strengths .strength-head{
+    grid-column:1 / -1 !important;
+    display:flex !important;
+    align-items:baseline !important;
+    gap:clamp(12px,1.8vw,24px) !important;
+    margin-bottom:clamp(20px,2vw,26px) !important;
+  }
+
+  .strengths .strength-head h2{
+    font-size:clamp(34px,3.7vw,52px) !important;
+  }
+
+  .strengths .strength-head p{
+    font-size:clamp(13px,1.1vw,18px) !important;
+    color:#fff !important;
+  }
+
+  .strengths .strength{
+    min-height:clamp(205px,18vw,252px) !important;
+    padding:clamp(16px,1.35vw,22px) !important;
+    grid-template-columns:clamp(42px,3vw,58px) minmax(0,1fr) !important;
+    grid-template-rows:clamp(68px,6vw,86px) auto !important;
+    column-gap:clamp(8px,.95vw,14px) !important;
+  }
+
+  .strengths .strength .num{
+    width:clamp(40px,2.9vw,52px) !important;
+    height:clamp(40px,2.9vw,52px) !important;
+    font-size:clamp(18px,1.5vw,22px) !important;
+  }
+
+  .strengths .strength b{
+    font-size:clamp(15px,1.36vw,20px) !important;
+    line-height:1.58 !important;
+    white-space:normal !important;
+    word-break:keep-all !important;
+    overflow-wrap:normal !important;
+  }
+
+  .strengths .strength b .forced-line,
+  .strengths .strength b .mobile-strength-line{
+    display:block !important;
+    white-space:nowrap !important;
+  }
+
+  .strengths .strength p{
+    font-size:clamp(13px,1.02vw,17px) !important;
+    line-height:1.85 !important;
+    margin-top:clamp(10px,1vw,14px) !important;
+  }
+}
+
+/* Narrower PC window: still 3 columns; scale rather than stack. */
+@media (min-width:801px) and (max-width:1280px){
+  .strengths .strength-grid{
+    grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+    gap:14px !important;
+  }
+
+  .strengths .strength{
+    min-height:195px !important;
+    padding:16px 15px 18px !important;
+    grid-template-columns:42px minmax(0,1fr) !important;
+    grid-template-rows:64px auto !important;
+    column-gap:8px !important;
+  }
+
+  .strengths .strength b{
+    font-size:14px !important;
+    line-height:1.5 !important;
+  }
+
+  .strengths .strength p{
+    font-size:12.5px !important;
+    line-height:1.78 !important;
+    margin-top:8px !important;
+  }
+}
+
+/* Contact title: match the supplied reference.
+   The Japanese subtitle uses the exact width of the Contact title block. */
+.contact .contact-title-v22{
+  display:inline-flex !important;
+  flex-direction:column !important;
+  align-items:stretch !important;
+  width:max-content !important;
+  max-width:100% !important;
+}
+
+.contact .contact-title-v22 .en{
+  display:block !important;
+  width:100% !important;
+  text-align:left !important;
+}
+
+.contact .contact-title-v22 .jp{
+  display:block !important;
+  width:100% !important;
+  text-align:center !important;
+  white-space:nowrap !important;
+}
+
+/* About:
+   Use the small-PC proportions from the approved 000index version,
+   but reduce the pink main title by about 5px so it does not collide
+   with the Saku profile column. */
+@media (min-width:801px) and (max-width:1500px){
+  .about-grid{
+    grid-template-columns:clamp(210px,19vw,280px) minmax(0,1.2fr) clamp(220px,21vw,300px) !important;
+    gap:clamp(18px,2vw,42px) !important;
+    align-items:center !important;
+  }
+
+  .about-grid > div{
+    min-width:0 !important;
+  }
+
+  .profile-frame{
+    width:clamp(210px,19vw,280px) !important;
+    height:clamp(285px,25vw,360px) !important;
+  }
+
+  .about-title-desktop{
+    font-size:clamp(25px,calc(2.8vw - 5px),33px) !important;
+    line-height:1.46 !important;
+  }
+
+  .about p{
+    font-size:clamp(12.5px,.95vw,14px) !important;
+    line-height:1.95 !important;
+  }
+
+  .quick{
+    padding-left:clamp(14px,1.4vw,28px) !important;
+  }
+
+  .quick div{
+    font-size:clamp(11.2px,.84vw,13px) !important;
+    padding:clamp(10px,.95vw,13px) 0 !important;
+    white-space:nowrap !important;
+  }
+}
+
+@media (min-width:801px) and (max-width:1280px){
+  .about-grid{
+    grid-template-columns:210px minmax(0,1.12fr) 215px !important;
+    gap:18px !important;
+  }
+
+  .about-title-desktop{
+    font-size:clamp(22px,calc(2.45vw - 5px),28px) !important;
+  }
+
+  .about p{
+    font-size:12.5px !important;
+    line-height:1.88 !important;
+  }
+
+  .quick div{
+    font-size:11px !important;
   }
 }
 </style>
