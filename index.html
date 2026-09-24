@@ -1804,3 +1804,17 @@ document.querySelector('#modal .close').onclick=closeModal;modal.onclick=e=>{if(
   }
 }
 </style>
+<style id="pc-services-shift-v9">
+@media (min-width: 801px){
+  /* PC only: nudge the Services text blocks slightly to the right.
+     01: +0.5em (about one half-width character)
+     02/03: +1em (about two half-width characters) */
+  #services .service:nth-child(1) .service-body{
+    padding-left: 3.95em !important;
+  }
+  #services .service:nth-child(2) .service-body,
+  #services .service:nth-child(3) .service-body{
+    padding-left: 4.45em !important;
+  }
+}
+</style>
