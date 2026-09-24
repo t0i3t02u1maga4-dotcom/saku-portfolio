@@ -1832,3 +1832,58 @@ document.querySelector('#modal .close').onclick=closeModal;modal.onclick=e=>{if(
   }
 }
 </style>
+<style id="pc-services-keep-desktop-layout-v12">
+/* PC版：ウィンドウが狭くなっても3カラムの見え方を保ちつつ、
+   Servicesセクションの中身だけ少しずつ縮める */
+@media (min-width:801px) and (max-width:1500px){
+  #services .service-top{
+    height:clamp(92px,6.8vw,105px)!important;
+  }
+  #services .service .service-body{
+    padding-top:clamp(24px,1.8vw,30px)!important;
+    padding-bottom:clamp(24px,1.8vw,30px)!important;
+  }
+  #services .service .service-body h3{
+    font-size:clamp(16px,1.18vw,21px)!important;
+    margin-bottom:.95em!important;
+    white-space:nowrap!important;
+  }
+  #services .service .service-body p{
+    font-size:clamp(12.8px,.92vw,18px)!important;
+    line-height:1.78!important;
+  }
+
+  /* 01〜03の位置を、フルウィンドウの見え方に寄せつつ微調整 */
+  #services .service:nth-child(1) .service-body{
+    padding-left:4.45em!important;
+  }
+  #services .service:nth-child(2) .service-body{
+    padding-left:4.70em!important; /* ほんの少し左へ */
+  }
+  #services .service:nth-child(3) .service-body{
+    padding-left:4.15em!important; /* 1行目を収めやすく */
+  }
+  #services .service:nth-child(3) .service-body p{
+    white-space:nowrap!important;
+  }
+}
+
+@media (min-width:801px) and (max-width:1320px){
+  #services .service .service-body h3{
+    font-size:clamp(15px,1.08vw,19px)!important;
+  }
+  #services .service .service-body p{
+    font-size:clamp(12px,.86vw,15.5px)!important;
+    line-height:1.72!important;
+  }
+  #services .service:nth-child(1) .service-body{
+    padding-left:4.10em!important;
+  }
+  #services .service:nth-child(2) .service-body{
+    padding-left:4.30em!important;
+  }
+  #services .service:nth-child(3) .service-body{
+    padding-left:3.70em!important;
+  }
+}
+</style>
