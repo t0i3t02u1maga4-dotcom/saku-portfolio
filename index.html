@@ -810,6 +810,25 @@ html,body{overflow-x:hidden}
   .about-title-desktop{font-size:clamp(34px,4vw,42px)!important;}
 }
 </style>
+
+<style id="about-title-mobile-visibility-fix">
+@media (max-width:800px){
+  .about-title-desktop{
+    display:none !important;
+  }
+  .about-title-mobile{
+    display:flex !important;
+  }
+}
+@media (min-width:801px){
+  .about-title-desktop{
+    display:block !important;
+  }
+  .about-title-mobile{
+    display:none !important;
+  }
+}
+</style>
 </head><body>
 <header><div class="wrap" style="width:100%"><nav><a class="logo" href="#">Saku<span>✿</span></a><a href="#about">About</a><a href="#services">Services</a><a href="#works">Works</a><a href="#mind">Mindsets</a><a href="#contact">Contact</a><a class="contact-btn inquiry-open" href="#">お問い合わせ</a></nav></div></header>
 <section class="hero hero-v18" aria-label="Saku ポートフォリオ トップ">
