@@ -902,6 +902,89 @@ html,body{overflow-x:hidden}
 }
 </style>
 
+
+<style id="v7-mobile-works-modal-fix">
+/* Mobile only: keep Works modal titles readable and show each artwork in full. */
+@media (max-width:800px){
+  #modal{padding:14px!important;align-items:center!important}
+  #modal .modalbox{
+    width:calc(100vw - 28px)!important;
+    height:min(88vh,760px)!important;
+    padding:24px 18px 20px!important;
+    border-radius:18px!important;
+    overflow:hidden!important;
+  }
+  #modal .close{right:18px!important;top:18px!important;width:48px!important;height:48px!important;font-size:29px!important}
+  #modal h2{
+    height:auto!important;
+    min-height:58px!important;
+    margin:0 64px 0!important;
+    padding:0!important;
+    font-size:24px!important;
+    line-height:1.28!important;
+    text-align:center!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    overflow:visible!important;
+  }
+  #modal[data-gallery-index="4"] h2,
+  #modal[data-gallery-index="1"] h2{font-size:22px!important}
+  #modal[data-gallery-index="0"] h2,
+  #modal[data-gallery-index="2"] h2{font-size:21px!important}
+  #modal .gallery-count{
+    height:auto!important;
+    min-height:22px!important;
+    margin:12px 0 14px!important;
+    line-height:1.25!important;
+    position:relative!important;
+    z-index:2!important;
+  }
+  #modal #mi{display:flex!important;flex-direction:column!important;min-height:0!important;overflow:hidden!important}
+  #modal .gallery,
+  #modal .gallery.feed,
+  #modal .gallery.slides,
+  #modal .gallery.single{
+    flex:1 1 auto!important;
+    min-height:0!important;
+    width:100%!important;
+    height:auto!important;
+    padding:0 4px 10px!important;
+    gap:16px!important;
+    align-items:center!important;
+    overflow-x:auto!important;
+    overflow-y:hidden!important;
+  }
+  #modal .gallery img,
+  #modal .gallery.feed img,
+  #modal .gallery.slides img,
+  #modal .gallery.single img{
+    flex:0 0 auto!important;
+    width:auto!important;
+    height:auto!important;
+    max-width:calc(100vw - 86px)!important;
+    max-height:calc(88vh - 190px)!important;
+    object-fit:contain!important;
+    object-position:center!important;
+    box-shadow:none!important;
+  }
+  /* Short galleries should still be centered, while preserving the full image. */
+  #modal .gallery.center-short{justify-content:center!important}
+  /* Landscape slide deck: fit the complete slide to the available mobile width. */
+  #modal[data-gallery-index="2"] .gallery img{
+    max-width:calc(100vw - 76px)!important;
+    max-height:calc(88vh - 205px)!important;
+  }
+  /* Portrait feed designs: fit the complete design vertically and horizontally. */
+  #modal[data-gallery-index="0"] .gallery img,
+  #modal[data-gallery-index="1"] .gallery img,
+  #modal[data-gallery-index="4"] .gallery img{
+    max-width:calc(100vw - 86px)!important;
+    max-height:calc(88vh - 205px)!important;
+  }
+}
+</style>
+
 </head><body>
 <header><div class="wrap" style="width:100%"><nav><a class="logo" href="#">Saku<span>✿</span></a><a href="#about">About</a><a href="#services">Services</a><a href="#works">Works</a><a href="#mind">Mindsets</a><a href="#contact">Contact</a><a class="contact-btn inquiry-open" href="#">お問い合わせ</a></nav></div></header>
 <section class="hero hero-v18" aria-label="Saku ポートフォリオ トップ">
@@ -963,7 +1046,17 @@ if(galleries[1] && galleries[1].items.length>=7){
 }
 const cards=[...document.querySelectorAll('.work-card')],modal=document.getElementById('modal'),mi=document.getElementById('mi'),mt=document.getElementById('mt');
 function enableDragScroll(el){let down=false,startX=0,startLeft=0,pid=null;el.addEventListener('pointerdown',e=>{if(e.button!==0)return;down=true;pid=e.pointerId;startX=e.clientX;startLeft=el.scrollLeft;el.classList.add('dragging');try{el.setPointerCapture(pid)}catch(_){};e.preventDefault()});el.addEventListener('pointermove',e=>{if(!down)return;el.scrollLeft=startLeft-(e.clientX-startX);e.preventDefault()});const end=()=>{down=false;el.classList.remove('dragging');pid=null};el.addEventListener('pointerup',end);el.addEventListener('pointercancel',end);el.addEventListener('wheel',e=>{if(Math.abs(e.deltaY)>=Math.abs(e.deltaX)){el.scrollLeft+=e.deltaY;e.preventDefault()}},{passive:false});}
-function openGallery(i){const g=galleries[i];mt.textContent=g.title;mi.innerHTML='';const count=document.createElement('div');count.className='gallery-count';count.textContent=g.items.length>1?`全 ${g.items.length} 枚`:'1枚';mi.appendChild(count);const wrap=document.createElement('div');wrap.className='gallery '+g.type+(g.items.length<=2?' center-short':'');g.items.forEach((src,idx)=>{const img=document.createElement('img');img.src=src;img.alt=`${g.title} ${idx+1}`;img.loading='lazy';wrap.appendChild(img)});mi.appendChild(wrap);enableDragScroll(wrap);modal.classList.add('open');document.body.style.overflow='hidden'}
+function openGallery(i){const g=galleries[i];
+ const mobile=window.matchMedia('(max-width: 800px)').matches;
+ const mobileTitles={
+  0:'フリーランス男性向け<br>ガジェット紹介投稿',
+  1:'ファン化を促す<br>フィード投稿',
+  2:'AIソリューション<br>営業資料',
+  4:'在宅仕事<br>サムネイル'
+ };
+ mt.innerHTML=(mobile&&mobileTitles[i])?mobileTitles[i]:g.title;
+ modal.dataset.galleryIndex=String(i);
+ mi.innerHTML='';const count=document.createElement('div');count.className='gallery-count';count.textContent=g.items.length>1?`全 ${g.items.length} 枚`:'1枚';mi.appendChild(count);const wrap=document.createElement('div');wrap.className='gallery '+g.type+(g.items.length<=2?' center-short':'');g.items.forEach((src,idx)=>{const img=document.createElement('img');img.src=src;img.alt=`${g.title} ${idx+1}`;img.loading='lazy';wrap.appendChild(img)});mi.appendChild(wrap);enableDragScroll(wrap);modal.classList.add('open');document.body.style.overflow='hidden'}
 cards.forEach(c=>{const i=Number(c.dataset.i);c.onclick=()=>openGallery(i);c.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openGallery(i)}}});
 function closeModal(){modal.classList.remove('open');document.body.style.overflow=''}
 document.querySelector('#modal .close').onclick=closeModal;modal.onclick=e=>{if(e.target===modal)closeModal()};document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
