@@ -829,6 +829,52 @@ html,body{overflow-x:hidden}
   }
 }
 </style>
+
+<style id="mobile-services-mindset-fix">
+/* Desktop remains exactly as before. */
+.mind-mobile{display:none}
+
+/* Smartphone-only refinements */
+@media (max-width:800px){
+  /* 02: keep its existing card structure; prevent awkward automatic breaks. */
+  .service-02 .service-body h3,
+  .service-02 .service-body p{
+    word-break:keep-all!important;
+    overflow-wrap:normal!important;
+  }
+
+  /* 03: center the title and all body copy within the card. */
+  .service-03 .service-body{
+    padding-left:22px!important;
+    padding-right:22px!important;
+    text-align:center!important;
+  }
+  .service-03 .service-body h3,
+  .service-03 .service-body p{
+    width:100%!important;
+    margin-left:auto!important;
+    margin-right:auto!important;
+    text-align:center!important;
+  }
+
+  /* Work Mindsets: mobile gets deliberate, visually balanced line breaks. */
+  .mind-desktop{display:none!important}
+  .mind-mobile{
+    display:block!important;
+    width:min(100% - 36px, 620px)!important;
+    margin:0 auto!important;
+    text-align:left!important;
+  }
+  .mind-mobile > span{
+    display:block!important;
+    white-space:nowrap!important;
+  }
+  .mind-mobile > span.mind-gap{
+    margin-top:.78em!important;
+  }
+}
+</style>
+
 </head><body>
 <header><div class="wrap" style="width:100%"><nav><a class="logo" href="#">Saku<span>✿</span></a><a href="#about">About</a><a href="#services">Services</a><a href="#works">Works</a><a href="#mind">Mindsets</a><a href="#contact">Contact</a><a class="contact-btn inquiry-open" href="#">お問い合わせ</a></nav></div></header>
 <section class="hero hero-v18" aria-label="Saku ポートフォリオ トップ">
@@ -838,7 +884,7 @@ html,body{overflow-x:hidden}
 </section>
 <section class="section about" id="about"><div class="wrap"><h2 class="section-title">About <span class="sub">わたしについて</span></h2><div class="about-grid"><div class="profile-frame"><img src="asset-03.webp" alt="Saku profile"></div><div><h2 class="about-title about-title-desktop"><span class="line1">金融11年で培った「整理する力」を、</span><span class="line2">SNS運用と業務サポートに。</span></h2><h2 class="about-title about-title-mobile"><span>金融11年で培った</span><span>「整理する力」を、</span><span>SNS運用と業務サポートに。</span></h2><p>金融業界で11年間、事務・営業の両面からお客様対応に携わってきました。相手の意図を汲み取り、必要な情報を整理し、正確に進めることを大切にしています。現在は、Xを中心としたSNS運用支援・投稿制作に加え、業務フローの整理やマニュアル作成など、バックオフィス業務もサポートしています。「伝わる形に整理すること」と「続けやすい仕組みに整えること」を通して、発信と業務の両面から支援します。</p></div><div class="quick"><div>✿ Saku</div><div>▣ 金融業界11年｜事務・営業</div><div>↗ SNS運用支援｜投稿設計・制作</div><div>▤ 業務整理｜マニュアル・仕組み化</div><div>♡ 強み｜整理・正確さ・改善力</div></div></div></div></section>
 <section class="strengths"><div class="wrap strength-grid"><div class="strength-head"><h2>Strengths</h2><p>わたしの強み</p></div><div class="strength"><span class="num">01</span><b>整理し、分かりやすい形にする力</b><p>情報や課題を整理し、相手が理解<br>しやすく次の行動に移りやすい形に整えます。</p></div><div class="strength"><span class="num">02</span><b>仕組みに落とし込み、改善する力</b><p>マニュアル化やチェック体制の整備など、再現性のある運用を意識します。</p></div><div class="strength"><span class="num">03</span><b>調べ、試し、改善を重ねる力</b><p>必要な情報を調べ、実際に試しながら数値をもとに改善します。</p></div></div></section>
-<section class="section" id="services"><img class="decor-flower-left" src="asset-04.webp" alt=""><div class="wrap"><h2 class="section-title">Services <span class="sub">対応可能な業務</span></h2><div class="services-grid"><div class="service"><div class="service-top"></div><div class="service-body"><h3>01 SNS運用支援</h3><p>リサーチ / 分析<span class="service-paren">（市場・競合・ターゲット）</span><br>アカウント設計 / 投稿設計<br>構成・文章作成・デザイン<br>DM / フォロー等の運用サポート<br>簡易分析 / 改善提案</p></div></div><div class="service"><div class="service-top"></div><div class="service-body"><h3>02 SNSコンテンツ制作</h3><p>Instagramフィード投稿デザイン<br>Instagramサムネイル制作<br>X投稿デザイン / 図解投稿<br>バナー / チラシ / 名刺等<br>動画編集（CapCut）</p></div></div><div class="service"><div class="service-top"></div><div class="service-body"><h3>03 資料・業務サポート</h3><p>営業資料 / 提案資料 / セミナー資料<br>データ入力 / 管理<br>業務フロー整理 / マニュアル作成<br>チェック体制構築 / タスク管理<br>顧客対応</p></div></div></div></div></section>
+<section class="section" id="services"><img class="decor-flower-left" src="asset-04.webp" alt=""><div class="wrap"><h2 class="section-title">Services <span class="sub">対応可能な業務</span></h2><div class="services-grid"><div class="service"><div class="service-top"></div><div class="service-body"><h3>01 SNS運用支援</h3><p>リサーチ / 分析<span class="service-paren">（市場・競合・ターゲット）</span><br>アカウント設計 / 投稿設計<br>構成・文章作成・デザイン<br>DM / フォロー等の運用サポート<br>簡易分析 / 改善提案</p></div></div><div class="service service-02"><div class="service-top"></div><div class="service-body"><h3>02 SNSコンテンツ制作</h3><p>Instagramフィード投稿デザイン<br>Instagramサムネイル制作<br>X投稿デザイン / 図解投稿<br>バナー / チラシ / 名刺等<br>動画編集（CapCut）</p></div></div><div class="service service-03"><div class="service-top"></div><div class="service-body"><h3>03 資料・業務サポート</h3><p>営業資料 / 提案資料 / セミナー資料<br>データ入力 / 管理<br>業務フロー整理 / マニュアル作成<br>チェック体制構築 / タスク管理<br>顧客対応</p></div></div></div></div></section>
 <section class="result"><div class="wrap result-grid"><div><small>SNS OPERATION RESULT</small><h2>運用支援の実績</h2><p>AI副業ジャンルのX運用支援</p></div><div class="metric"><b>30</b><span>運用日数</span></div><div class="metric"><b>117</b><span>DM送付</span></div><div class="metric"><b>11</b><span>登録</span></div><div class="metric"><b>9.4%</b><span>登録率</span></div></div></section>
 <section class="section works" id="works"><img class="decor-flower-right" src="asset-05.webp" alt=""><div class="wrap"><h2 class="section-title">Works <span class="sub">制作実績</span></h2><div class="works-grid">
 <article class="work-card" data-i="0" tabindex="0" role="button"><div class="work-thumb"><img src="asset-06.webp" alt="ガジェット紹介"></div><div class="work-copy"><small>Instagram / Feed</small><h3>フリーランス男性向けガジェット紹介</h3><p>クリックして制作デザインを確認 →</p></div></article>
@@ -847,7 +893,27 @@ html,body{overflow-x:hidden}
 <article class="work-card" data-i="3" tabindex="0" role="button"><div class="work-thumb"><img src="asset-09.webp" alt="美容サロン広告バナー"></div><div class="work-copy"><small>Banner</small><h3>美容サロン広告バナー</h3><p>クリックして制作デザインを確認 →</p></div></article>
 <article class="work-card" data-i="4" tabindex="0" role="button"><div class="work-thumb"><img src="asset-10.webp" alt="在宅仕事サムネイル制作"></div><div class="work-copy"><small>Instagram / Thumbnail</small><h3>在宅仕事サムネイル</h3><p>クリックして制作デザインを確認 →</p></div></article>
 </div></div></section>
-<section class="mind" id="mind"><small>WORK MINDSETS</small><h2>伝わる形に、整理する。</h2><p><span class="mind-line">デザインやSNS運用、バックオフィス業務など、どの仕事においても大切にしているのは、</span><span class="mind-line">情報や目的を整理し、相手にとって分かりやすい形に整えることです。</span><span class="mind-line">制作では「誰に・何を・どのように伝えるのか」を考え、</span><span class="mind-line">見る人が理解しやすく、次の行動につながるよう情報の順序や見せ方を設計します。</span><span class="mind-line">また、業務では一度きりの対応で終わらせず、</span><span class="mind-line">次回以降も進めやすい形に整理することを意識しています。</span></p></section>
+<section class="mind" id="mind"><small>WORK MINDSETS</small><h2>伝わる形に、整理する。</h2><p class="mind-copy">
+<span class="mind-desktop">
+<span class="mind-line">デザインやSNS運用、バックオフィス業務など、どの仕事においても大切にしているのは、</span><span class="mind-line">情報や目的を整理し、相手にとって分かりやすい形に整えることです。</span><span class="mind-line">制作では「誰に・何を・どのように伝えるのか」を考え、</span><span class="mind-line">見る人が理解しやすく、次の行動につながるよう情報の順序や見せ方を設計します。</span><span class="mind-line">また、業務では一度きりの対応で終わらせず、</span><span class="mind-line">次回以降も進めやすい形に整理することを意識しています。</span>
+</span>
+<span class="mind-mobile">
+<span>デザインやSNS運用、</span>
+<span>バックオフィス業務など、</span>
+<span>どの仕事においても大切にしているのは、</span>
+<span>情報や目的を整理し、</span>
+<span>相手にとって分かりやすい形に</span>
+<span>整えることです。</span>
+<span class="mind-gap">制作では「誰に・何を・</span>
+<span>どのように伝えるのか」を考え、</span>
+<span>見る人が理解しやすく、</span>
+<span>次の行動につながるよう</span>
+<span>情報の順序や見せ方を設計します。</span>
+<span class="mind-gap">また、業務では一度きりの対応で</span>
+<span>終わらせず、次回以降も進めやすい形に</span>
+<span>整理することを意識しています。</span>
+</span>
+</p></section>
 <section class="contact" id="contact"><div class="wrap"><div><h2><span>Contact</span>　ご相談・ご依頼</h2><p>SNS運用支援、投稿制作、資料制作、業務整理など、<br>お気軽にご相談ください。</p><div class="contact-actions"><a class="btn primary inquiry-open" href="#">お問い合わせ →</a></div></div><div class="contact-links"><a href="mailto:t0i3.t02u.1maga.4@gmail.com">✉ t0i3.t02u.1maga.4@gmail.com</a><a href="https://x.com/SakuSNSDesigner" target="_blank" rel="noopener">X @SakuSNSDesigner</a></div></div></section>
 <div class="inquiry-modal" id="inquiryModal"><div class="inquiry-box"><button class="inquiry-close" type="button" aria-label="閉じる">×</button><h2>お問い合わせ</h2><form action="https://formsubmit.co/t0i3.t02u.1maga.4@gmail.com" method="POST">
 <input type="hidden" name="_next" value="https://t0i3t02u1maga4-dotcom.github.io/saku-portfolio/thanks.html"><input type="hidden" name="_subject" value="ポートフォリオHPからのお問い合わせ"><input type="hidden" name="_captcha" value="false"><label>お名前</label><input name="お名前" required><label>メールアドレス</label><input name="email" type="email" required><label>ご相談内容</label><input name="ご相談内容" placeholder="例：SNS運用支援について"><label>メッセージ</label><textarea name="メッセージ" required></textarea><button class="btn primary inquiry-submit" type="submit">送信する →</button><p class="form-note">必要事項をご入力のうえ、送信してください。</p></form></div></div>
