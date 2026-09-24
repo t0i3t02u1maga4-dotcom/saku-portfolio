@@ -2023,3 +2023,185 @@ document.querySelector('#modal .close').onclick=closeModal;modal.onclick=e=>{if(
   }
 }
 </style>
+<style id="pc-layout-rebalance-v14">
+/* v14: PC版の見え方をv12寄りに戻しつつ、縮小時は中身だけ自然に縮める */
+@media (min-width:801px){
+  /* フルウィンドウ時の横長感を少し戻す */
+  #services > .wrap,
+  .strengths .strength-grid{
+    max-width:1180px!important;
+    width:min(100% - 60px,1180px)!important;
+    margin-left:auto!important;
+    margin-right:auto!important;
+  }
+
+  /* Services: 01〜03のテキストブロックを少し右へ。 */
+  #services .services-grid{
+    gap:22px!important;
+  }
+  #services .service .service-body{
+    padding:24px 26px 26px 34px!important;
+  }
+  #services .service .service-body h3,
+  #services .service .service-body p{
+    text-align:left!important;
+  }
+  #services .service:nth-child(1) .service-body{
+    padding-left:36px!important;
+  }
+  #services .service:nth-child(2) .service-body{
+    padding-left:38px!important;
+  }
+  #services .service:nth-child(3) .service-body{
+    padding-left:42px!important;
+  }
+
+  /* Strengths: 文章を横に伸ばし過ぎず、左右の余白を揃える */
+  .strengths .strength-grid{
+    gap:18px!important;
+  }
+  .strengths .strength{
+    display:grid!important;
+    grid-template-columns:48px minmax(0,1fr)!important;
+    grid-template-rows:auto auto!important;
+    column-gap:14px!important;
+    row-gap:16px!important;
+    min-height:230px!important;
+    padding:26px 24px 26px 20px!important;
+  }
+  .strengths .strength .num{
+    grid-column:1!important;
+    grid-row:1!important;
+    align-self:start!important;
+    width:44px!important;
+    height:44px!important;
+    margin:0!important;
+    font-size:18px!important;
+  }
+  .strengths .strength b{
+    grid-column:2!important;
+    grid-row:1!important;
+    align-self:start!important;
+    margin:0!important;
+    font-size:17px!important;
+    line-height:1.6!important;
+    white-space:normal!important;
+  }
+  .strengths .strength p{
+    grid-column:2!important;
+    grid-row:2!important;
+    align-self:start!important;
+    justify-self:start!important;
+    margin:0!important;
+    max-width:24em!important;
+    font-size:14px!important;
+    line-height:1.9!important;
+    text-align:left!important;
+    white-space:normal!important;
+    word-break:keep-all!important;
+    overflow-wrap:normal!important;
+  }
+  .strengths .strength:nth-child(2) p{
+    max-width:23em!important;
+  }
+  .strengths .strength:nth-child(3) p{
+    max-width:22em!important;
+  }
+
+  /* PC用の意図した改行位置 */
+  .pc-strength-break{display:block!important}
+}
+
+@media (min-width:801px) and (max-width:1366px){
+  /* 小さめウィンドウでは中身を少し縮めて、レイアウト維持 */
+  #services > .wrap,
+  .strengths .strength-grid{
+    max-width:1100px!important;
+    width:min(100% - 48px,1100px)!important;
+  }
+
+  #services .services-grid{
+    gap:18px!important;
+  }
+  #services .service .service-body{
+    padding:22px 22px 24px 30px!important;
+  }
+  #services .service:nth-child(1) .service-body{
+    padding-left:32px!important;
+  }
+  #services .service:nth-child(2) .service-body{
+    padding-left:33px!important;
+  }
+  #services .service:nth-child(3) .service-body{
+    padding-left:34px!important;
+  }
+  #services .service .service-body h3{
+    font-size:clamp(15px,1.22vw,18px)!important;
+    margin-bottom:12px!important;
+  }
+  #services .service .service-body p{
+    font-size:clamp(12px,.95vw,13.5px)!important;
+    line-height:1.82!important;
+  }
+  #services .service:nth-child(3) .service-body p{
+    font-size:clamp(11.7px,.90vw,13px)!important;
+  }
+
+  .strengths .strength-grid{
+    gap:16px!important;
+  }
+  .strengths .strength{
+    grid-template-columns:44px minmax(0,1fr)!important;
+    column-gap:12px!important;
+    row-gap:14px!important;
+    min-height:210px!important;
+    padding:22px 20px 22px 18px!important;
+  }
+  .strengths .strength .num{
+    width:40px!important;
+    height:40px!important;
+    font-size:17px!important;
+  }
+  .strengths .strength b{
+    font-size:15px!important;
+    line-height:1.58!important;
+  }
+  .strengths .strength p{
+    font-size:12.8px!important;
+    line-height:1.85!important;
+    max-width:23em!important;
+  }
+  .strengths .strength:nth-child(3) p{
+    max-width:21.5em!important;
+  }
+}
+
+@media (max-width:800px){
+  .pc-strength-break{display:inline!important}
+}
+</style>
+
+<script id="pc-strength-copy-v14">
+(()=>{
+  if(window.innerWidth <= 800) return;
+  const cards = document.querySelectorAll('.strengths .strength');
+  if(cards[0]){
+    const p = cards[0].querySelector('p');
+    if(p){
+      p.innerHTML = '情報や課題を整理し、相手が理解しやすく<span class="pc-strength-break"></span>次の行動に移りやすい形に整えます。';
+    }
+  }
+  if(cards[1]){
+    const p = cards[1].querySelector('p');
+    if(p){
+      p.innerHTML = 'マニュアル化やチェック体制の整備など、<span class="pc-strength-break"></span>再現性のある運用を意識します。';
+    }
+  }
+  if(cards[2]){
+    const p = cards[2].querySelector('p');
+    if(p){
+      p.innerHTML = '必要な情報を調べ、実際に試しながら<span class="pc-strength-break"></span>数値をもとに改善します。';
+    }
+  }
+})();
+</script>
