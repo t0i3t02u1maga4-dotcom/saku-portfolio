@@ -1887,3 +1887,139 @@ document.querySelector('#modal .close').onclick=closeModal;modal.onclick=e=>{if(
   }
 }
 </style>
+<style id="pc-fluid-shrink-v13">
+/* PC版：ウィンドウが小さくなってもフル表示の見え方を保ち、
+   レイアウトは崩さず中身を少しずつ縮める最終調整 */
+@media (min-width:801px) and (max-width:1500px){
+  .wrap{
+    max-width:1240px!important;
+    width:min(100% - 34px,1240px)!important;
+    padding-left:clamp(18px,2.1vw,42px)!important;
+    padding-right:clamp(18px,2.1vw,42px)!important;
+  }
+
+  /* About */
+  .about-grid{
+    grid-template-columns:clamp(210px,19vw,280px) minmax(0,1.2fr) clamp(220px,21vw,300px)!important;
+    gap:clamp(18px,2vw,42px)!important;
+    align-items:center!important;
+  }
+  .about-grid > div{min-width:0!important;}
+  .profile-frame{
+    width:clamp(210px,19vw,280px)!important;
+    height:clamp(285px,25vw,360px)!important;
+  }
+  .about-title-desktop{
+    font-size:clamp(30px,2.8vw,38px)!important;
+    line-height:1.46!important;
+  }
+  .about p{
+    font-size:clamp(12.5px,.95vw,14px)!important;
+    line-height:1.95!important;
+  }
+  .quick{
+    padding-left:clamp(14px,1.4vw,28px)!important;
+  }
+  .quick div{
+    font-size:clamp(11.2px,.84vw,13px)!important;
+    padding:clamp(10px,.95vw,13px) 0!important;
+    white-space:nowrap!important;
+  }
+
+  /* Strengths: 常に3枚横並びを維持して縮小 */
+  .strengths .wrap{
+    max-width:1240px!important;
+    width:min(100% - 34px,1240px)!important;
+    padding-left:clamp(18px,2.1vw,42px)!important;
+    padding-right:clamp(18px,2.1vw,42px)!important;
+  }
+  .strengths .strength-grid{
+    display:grid!important;
+    grid-template-columns:repeat(3,minmax(0,1fr))!important;
+    gap:clamp(12px,1.5vw,22px)!important;
+    align-items:stretch!important;
+  }
+  .strengths .strength-head{
+    grid-column:1/-1!important;
+    display:flex!important;
+    align-items:baseline!important;
+    gap:clamp(12px,1.8vw,22px)!important;
+  }
+  .strengths .strength-head h2{
+    font-size:clamp(34px,3.7vw,52px)!important;
+  }
+  .strengths .strength-head p{
+    font-size:clamp(13px,1.1vw,16px)!important;
+  }
+  .strengths .strength{
+    min-height:clamp(205px,18vw,252px)!important;
+    padding:clamp(16px,1.35vw,22px)!important;
+    grid-template-columns:clamp(42px,3vw,58px) minmax(0,1fr)!important;
+    grid-template-rows:clamp(68px,6vw,86px) auto!important;
+    column-gap:clamp(8px,.95vw,14px)!important;
+  }
+  .strengths .strength .num{
+    width:clamp(40px,2.9vw,52px)!important;
+    height:clamp(40px,2.9vw,52px)!important;
+    font-size:clamp(18px,1.5vw,22px)!important;
+  }
+  .strengths .strength b{
+    font-size:clamp(15px,1.36vw,17px)!important;
+    line-height:1.58!important;
+    white-space:normal!important;
+  }
+  .strengths .strength p{
+    font-size:clamp(13px,1.02vw,15px)!important;
+    line-height:1.85!important;
+    margin-top:clamp(10px,1vw,14px)!important;
+  }
+
+  /* Services: v12の方針を維持しつつ、カードの見え方をそろえる */
+  #services .services-grid{
+    grid-template-columns:repeat(3,minmax(0,1fr))!important;
+    gap:clamp(14px,1.7vw,22px)!important;
+  }
+  #services .service-top::after{
+    font-size:clamp(24px,2.1vw,28px)!important;
+  }
+}
+
+/* もう少し狭いPC幅ではさらに詰めるが、縦積みにはしない */
+@media (min-width:801px) and (max-width:1280px){
+  .about-grid{
+    grid-template-columns:210px minmax(0,1.12fr) 215px!important;
+    gap:18px!important;
+  }
+  .about-title-desktop{
+    font-size:clamp(27px,2.45vw,33px)!important;
+  }
+  .about p{
+    font-size:12.5px!important;
+    line-height:1.88!important;
+  }
+  .quick div{
+    font-size:11px!important;
+  }
+
+  .strengths .strength-grid{
+    grid-template-columns:repeat(3,minmax(0,1fr))!important;
+    gap:14px!important;
+  }
+  .strengths .strength{
+    min-height:195px!important;
+    padding:16px 15px 18px!important;
+    grid-template-columns:42px minmax(0,1fr)!important;
+    grid-template-rows:64px auto!important;
+    column-gap:8px!important;
+  }
+  .strengths .strength b{
+    font-size:14px!important;
+    line-height:1.5!important;
+  }
+  .strengths .strength p{
+    font-size:12.5px!important;
+    line-height:1.78!important;
+    margin-top:8px!important;
+  }
+}
+</style>
