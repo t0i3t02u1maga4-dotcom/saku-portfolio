@@ -1038,7 +1038,7 @@ html,body{overflow-x:hidden}
 <span class="mind-line">意識しています。</span>
 </span>
 </p></section>
-<section class="contact" id="contact"><div class="wrap"><div><h2><span>Contact</span>　ご相談・ご依頼</h2><p>SNS運用支援、投稿制作、資料制作、業務整理など、<br>お気軽にご相談ください。</p><div class="contact-actions"><a class="btn primary inquiry-open" href="#">お問い合わせ →</a></div></div><div class="contact-links"><a href="mailto:t0i3.t02u.1maga.4@gmail.com">✉ t0i3.t02u.1maga.4@gmail.com</a><a href="https://x.com/SakuSNSDesigner" target="_blank" rel="noopener">X @SakuSNSDesigner</a></div></div></section>
+<section class="contact" id="contact"><div class="wrap"><div><h2><span>Contact</span>　ご相談・ご依頼</h2><p>SNS運用支援、投稿制作、資料制作、業務整理など、<br>お気軽にご相談ください。</p><div class="contact-actions"><a class="btn primary inquiry-open" href="#">お問い合わせ →</a></div></div><div class="contact-links"><a href="mailto:t0i3.t02u.1maga.4@gmail.com">✉ t0i3.t02u.1maga.4@gmail.com</a><a href="https://x.com/SakuSNSDesigner" target="_blank" rel="noopener">X @SakuSNSDesigner</a></div><div class="contact-qr"><a href="https://hip-quokka-b1e.notion.site/Portfolio-2d54d0d2da6a8033babdf7254956d7d9" target="_blank" rel="noopener" aria-label="Notionポートフォリオを開く"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAWgAAAFoAQAAAABSnlx4AAACe0lEQVR4nO2bwY4aMAxE31T8/y9PD3Yc0qoHpEAT1nBYWN5h5DUTZ5KVeeHx6xW46aabbrrpN9IPAMVrg8Ay+QIsPD89SPet9AOIWiLACMvieRmtTw/SfSsd9UZR1exoMDIGWfPTk3R/Da2otYwELI1+su5L6MfyLktdfiJWZzlH96101nuUN33aCM9C16tzdN9KY1dh/Y/nBM/RfSstr+9iIFQOg39u9s/RfTUtENJTucNDLOL5MSU/hBbPc7ew08fl+Aqo5++ttPCcsrGQneunLSk3mcfpvpR2NLVgNLqRhcrCY1E9TfettOyISmJrmY0eFq5o9faTjbRVU4nDvaUse7S+PqXk2+kMA0dVXSYur6FK54P76GHfnlmgLBmUduLOq/bQlZ+o8u8MZsvQ5er6c3TfSmu4h7LONYR75OEwUtqDdF9NC2PFkOI0c8Dh254ZymG6L6Sjv9cqa5zzjLM1j1j2HN3X05Ywjv17LZzDWfxBJd9Py1iRmagGlBxKlFbe+50t9ANiMKmECoeb5F8BaP/eTEcSa2NlhIIlo5mftH/vpGNr89TI8Lx61inmabovpWuRjClFud8EKhrvvGojrRy8w0/isNjKkTBzws8o+Xq65pGZw2blx2/GEc+7lfwMeuSDqgobWZnOjj0QvV5uopcj+GhljXgq85S6c3WS7lvp5X6s0RxLIsFSfQXereRn0Mv9WJk8vIyR3GNk6fxkF73cj7XGgBI1rjS885O30DGEh287U6v80X7yBtpiXISI5rY03Lv3O1vo5X4s81ZEHa/FZqj3O5voqHcOKKqo0NHqMP+fp+fBHfRfV2D/m5Kmm2666aZfefwGYRhKxSWtT7oAAAAASUVORK5CYII=" alt="Notionポートフォリオ QRコード"></a></div></div></section>
 <div class="inquiry-modal" id="inquiryModal"><div class="inquiry-box"><button class="inquiry-close" type="button" aria-label="閉じる">×</button><h2>お問い合わせ</h2><form action="https://formsubmit.co/t0i3.t02u.1maga.4@gmail.com" method="POST">
 <input type="hidden" name="_next" value="https://t0i3t02u1maga4-dotcom.github.io/saku-portfolio/thanks.html"><input type="hidden" name="_subject" value="ポートフォリオHPからのお問い合わせ"><input type="hidden" name="_captcha" value="false"><label>お名前</label><input name="お名前" required><label>メールアドレス</label><input name="email" type="email" required><label>ご相談内容</label><input name="ご相談内容" placeholder="例：SNS運用支援について"><label>メッセージ</label><textarea name="メッセージ" required></textarea><button class="btn primary inquiry-submit" type="submit">送信する →</button><p class="form-note">必要事項をご入力のうえ、送信してください。</p></form></div></div>
 <div class="modal" id="modal"><div class="modalbox"><button class="close">×</button><h2 id="mt"></h2><div id="mi"></div></div></div>
@@ -2121,6 +2121,68 @@ document.querySelector('#modal .close').onclick=closeModal;modal.onclick=e=>{if(
     margin-left:auto !important;
     margin-right:auto !important;
     text-align:left !important;
+  }
+}
+</style>
+
+
+<style id="contact-qr-layout-20260926">
+/* Contact QR only. Existing Contact design is preserved. */
+@media (min-width:801px){
+  .contact .contact-qr{
+    grid-column:2!important;
+    grid-row:3!important;
+    justify-self:start!important;
+    align-self:start!important;
+    width:max-content!important;
+    margin:22px 0 0!important;
+    position:relative!important;
+    z-index:2!important;
+  }
+  .contact .contact-qr a{
+    display:inline-flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    padding:8px!important;
+    background:#fff!important;
+    border:1px solid rgba(180,111,141,.28)!important;
+    border-radius:10px!important;
+    box-shadow:none!important;
+  }
+  .contact .contact-qr img{
+    display:block!important;
+    width:126px!important;
+    height:126px!important;
+    max-width:none!important;
+    object-fit:contain!important;
+  }
+}
+
+@media (max-width:800px){
+  .contact .contact-qr{
+    display:block!important;
+    width:max-content!important;
+    max-width:100%!important;
+    margin:24px auto 0!important;
+    position:relative!important;
+    z-index:2!important;
+  }
+  .contact .contact-qr a{
+    display:inline-flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    padding:8px!important;
+    background:#fff!important;
+    border:1px solid rgba(180,111,141,.28)!important;
+    border-radius:10px!important;
+    box-shadow:none!important;
+  }
+  .contact .contact-qr img{
+    display:block!important;
+    width:116px!important;
+    height:116px!important;
+    max-width:100%!important;
+    object-fit:contain!important;
   }
 }
 </style>
